@@ -1,0 +1,47 @@
+<div class="login-form container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Login</h2>
+        </div>
+        <div class="card-body p-5">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-4">
+              <label for="username" class="form-label">Username:</label>
+              <input
+                type="text"
+                id="username"
+                formControlName="username"
+                class="form-control"
+              />
+              <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
+                Username is required.
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="password" class="form-label">Password:</label>
+              <input
+                type="password"
+                id="password"
+                formControlName="passwordHash"
+                class="form-control"
+              />
+              <div *ngIf="passwordHash?.invalid && (passwordHash?.dirty || passwordHash?.touched)" class="alert alert-danger">
+                Password is required.
+              </div>
+            </div>
+            <div class="form-group text-center mb-4">
+              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+                Login
+              </button>
+            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger text-center">
+              {{ errorMessage }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

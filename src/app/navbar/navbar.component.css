@@ -1,0 +1,26 @@
+/* app.component.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.hero {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  margin: 0.5rem 0;
+}

@@ -1,0 +1,39 @@
+.login-form {
+  margin-top: 50px;
+}
+
+.login-form .card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .card-header {
+  background-color: #5bc0de;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.login-form .form-control {
+  border-radius: 30px;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.login-form .btn-primary {
+  background-color: #5bc0de;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.login-form .btn-primary:hover {
+  background-color: #31b0d5;
+}
+
+.login-form .alert-danger {
+  border-radius: 30px;
+  font-size: 1rem;
+}
