@@ -1,0 +1,56 @@
+body {
+  background-color: #333;
+  color: #fff; /* Ensures default text color is white */
+  font-family: Arial, sans-serif;
+}
+.footer {
+  background-color: #222;
+  padding: 40px 0;
+}
+.footer h3 {
+  color: orange;
+  border-bottom: 2px solid orange;
+  padding-bottom: 10px;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  padding: 5px 0;
+}
+.footer a, .footer p {
+  color: #fff; /* Make all text in the footer white, including links and paragraphs */
+  text-decoration: none;
+}
+.footer a:hover {
+  color: orange;
+}
+.newsletter input[type="email"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #555;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+.newsletter button {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+/* Add animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.animate {
+  animation: fadeInUp 0.5s ease-out forwards;
+}

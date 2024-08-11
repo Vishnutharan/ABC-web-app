@@ -1,26 +1,101 @@
-/* app.component.css */
+body {
+  font-family: 'Arial', sans-serif;
+}
 
-.navbar {
+.menu-section {
+  padding: 2rem 0;
+}
+
+.menu-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  color: #ff6f61;
+}
+
+.menu-title::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background: #ff6f61;
+  bottom: -10px;
+  left: 0;
+}
+
+.menu-categories {
+  margin-bottom: 2rem;
   display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
+  gap: 1rem;
 }
 
-.navbar .nav-links a {
-  color: white;
+.menu-categories a {
   text-decoration: none;
-  margin: 0 10px;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.hero {
-  background-color: #222;
+.menu-categories a.active,
+.menu-categories a:hover {
+  color: #ff6f61;
+  border-bottom: 2px solid #ff6f61;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+  background: #fff8f0;
+}
+
+.menu-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.menu-item h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.menu-item p {
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+}
+
+.menu-item .price {
+  color: #ff6f61;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.add-to-cart {
+  background-color: #ff6f61;
+  border: none;
   color: white;
-  text-align: center;
-  padding: 2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
-.hero h1 {
-  margin: 0.5rem 0;
+.add-to-cart:hover {
+  background-color: #ff3f3f;
 }

@@ -1,0 +1,90 @@
+body, html {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+.banner-section {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.banner-content p {
+    font-size: 1.2rem;
+    margin: 20px auto;
+    max-width: 600px;
+}
+.btn-primary, .btn-secondary {
+    margin: 10px;
+}
+.icon-card {
+    text-align: center;
+    padding: 20px;
+}
+.icon-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.menu-item {
+    background: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.menu-item:hover {
+    transform: scale(1.05);
+}
+.footer {
+    background: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+.footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.social-links i {
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+}
+.newsletter input[type="email"] {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    width: 70%;
+}
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.animate {
+    animation: fadeInUp;
+    animation-duration: 1s;
+}

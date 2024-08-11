@@ -1,0 +1,90 @@
+/* Container and Title Styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #07232e; /* Dark background for contrast */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+}
+
+.reservation-title {
+    text-align: center;
+    color: #FED766; /* Vibrant yellow */
+    font-size: 24px;
+    padding: 20px 0;
+}
+
+/* Form Styling */
+.form-control {
+    background-color: #444; /* Dark grey background */
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: #FFF;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #362f2f; /* Slightly lighter grey */
+    box-shadow: 0 0 8px #FED766; /* Soft glow effect */
+    outline: none; /* Removing default focus outline */
+}
+
+/* Animation for label to act as a placeholder */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.form-group:hover label {
+    color: #FED766; /* Change label color on hover */
+}
+
+/* Button Styling with Animation */
+.btn-reservation {
+    background-color: #FED766; /* Vibrant yellow background */
+    color: #333; /* Dark text for contrast */
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-reservation:hover, .btn-reservation:focus {
+    transform: scale(1.05); /* Button grows slightly */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* More pronounced shadow */
+}
+
+/* Responsive Flexbox Layout */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+/* Styling for the textarea */
+.animated-textarea {
+    transition: border-color 0.3s ease;
+}
+
+.animated-textarea:focus {
+    border-color: #FED766; /* Highlight border when focused */
+}

@@ -14,6 +14,10 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { ProductComponent } from './product/product.component';
+import { BookingComponent } from './booking/booking.component';
+import { ContectComponent } from './contect/contect.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -26,6 +30,10 @@ import { HomeComponent } from './home/home.component';
     StaffDashboardComponent,
     CustomerDashboardComponent,
     HomeComponent,
+    ProductComponent,
+    BookingComponent,
+    ContectComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
