@@ -1,90 +1,115 @@
-body, html {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-}
 .banner-section {
+    height: 90vh;
     background-size: cover;
-    background-position: center;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
-}
-.banner-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-.banner-content p {
-    font-size: 1.2rem;
-    margin: 20px auto;
-    max-width: 600px;
-}
-.btn-primary, .btn-secondary {
-    margin: 10px;
-}
-.icon-card {
     text-align: center;
-    padding: 20px;
+    color: white;
 }
 .icon-card img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 150px; /* Smaller height for icons */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.icon-card:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
 }
 .menu-item img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 150px; /* Fixed height for alignment */
+    object-fit: cover;
 }
-.menu-item {
-    background: #f9f9f9;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+.animated-input, .animated-button {
+    transition: all 0.3s ease;
 }
-.menu-item:hover {
-    transform: scale(1.05);
+.animated-input:hover, .animated-button:hover, .btn-reservation:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .footer {
-    background: #343a40;
+    background-color: #333;
     color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 40px 0;
 }
 .footer ul {
     list-style: none;
     padding: 0;
 }
-.footer ul li a {
+.footer a {
     color: white;
-    text-decoration: none;
+    transition: color 0.3s;
 }
 .footer a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #a2d2ff;
 }
-.social-links i {
-    font-size: 1.5rem;
+.newsletter input, .newsletter button {
+    width: 100%;
+    margin-top: 5px;
+}
+.reservation-section, .footer {
+    background-color: #b5afec; /* Light background for contrast */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    margin-bottom: 30px;
+}
+.reservation-form .form-group {
+    margin-bottom: 20px;
+}
+.animated-input, .animated-button, .newsletter input, .newsletter button {
+    transition: all 0.3s ease;
+    border-radius: 5px; /* Rounded corners for input fields and buttons */
+}
+.animated-input:focus, .animated-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Bootstrap primary color focus glow */
+}
+.btn-reservation {
+    background-color: #007bff; /* Primary blue */
     color: white;
-    padding: 10px;
-}
-.newsletter input[type="email"] {
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    width: 70%;
-}
-.newsletter button {
     padding: 10px 20px;
-    background-color: #007bff;
+    font-size: 16px; /* Larger font for emphasis */
     border: none;
-    color: white;
     cursor: pointer;
 }
-.animate {
-    animation: fadeInUp;
-    animation-duration: 1s;
+.btn-reservation:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.footer {
+    background-color: rgb(92, 28, 211);
+    color: #d2d8df; /* Dark grey text for readability */
+}
+.footer a {
+    color: inherit; /* Footer links use the same color as footer text */
+}
+.footer h3 {
+    margin-bottom: 15px;
+}
+.footer ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+.footer li a {
+    text-decoration: none;
+    color: #bcc1c7; /* Use primary color for links */
+    transition: color 0.2s ease-in-out;
+}
+.footer li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+}
+.newsletter input {
+    padding: 10px;
+    margin-top: 10px;
+}
+.newsletter button {
+    margin-top: 10px;
+    width: 100%; /* Full width button */
+    background-color: #28a745; /* Success green */
+    color: white;
+}
+.newsletter button:hover {
+    background-color: #218838; /* Darker green on hover */
 }
