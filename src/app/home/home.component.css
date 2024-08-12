@@ -159,11 +159,18 @@
 .about-us {
     flex: 1;
     padding: 20px;
-    background-color: #007bff;
+    background-color: #8db6e2;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
+.about-us h2{
+    color: black;
+    
+}
+.about-us p{
+    color: black;
+    
+}
 .image-gallery {
     width: 300px;
     /* Smaller size for images */
@@ -196,7 +203,7 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    background-color: #8042e2;
+    background-color: #ceb5f5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -294,7 +301,7 @@ body {
     color: #555;
 }
 .container1{
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 20px auto; /* Center the container horizontally */
     padding: 20px;
     background-color: #f5f5f5;
@@ -304,7 +311,7 @@ body {
 }
 
 .container2 {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 20px auto; /* Center the container horizontally */
     padding: 20px;
     background-color: #0f5f69;
@@ -314,7 +321,7 @@ body {
 }
 
 .container3 {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 20px auto; /* Center the container horizontally */
     padding: 20px;
     background-color: #7595ff;
@@ -324,7 +331,7 @@ body {
 }
 
 .container4 {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 20px auto; /* Center the container horizontally */
     padding: 20px;
     background-color: #4d4242;
