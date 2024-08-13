@@ -6,14 +6,26 @@
     background: #07232e; /* Dark background for contrast */
     color: #fff;
     border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .reservation-title {
     text-align: center;
     color: #FED766; /* Vibrant yellow */
-    font-size: 24px;
-    padding: 20px 0;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 /* Form Styling */
@@ -23,7 +35,7 @@
     border-radius: 4px;
     padding: 12px 20px;
     color: #FFF;
-    font-size: 16px;
+    font-size: 1rem;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -33,7 +45,6 @@
     outline: none; /* Removing default focus outline */
 }
 
-/* Animation for label to act as a placeholder */
 label {
     display: block;
     margin-bottom: 5px;
@@ -56,17 +67,19 @@ label {
     cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.btn-reservation:hover, .btn-reservation:focus {
+.btn-reservation:hover,
+.btn-reservation:focus {
     transform: scale(1.05); /* Button grows slightly */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* More pronounced shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
 }
 
 /* Responsive Flexbox Layout */
 .form-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 15px;
 }
