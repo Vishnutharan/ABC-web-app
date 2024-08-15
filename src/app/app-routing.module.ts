@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
-import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ProductComponent } from './product/product.component';
-import { BookingComponent } from './booking/booking.component';
-import { ContectComponent } from './contect/contect.component';
-import { AboutComponent } from './about/about.component';
+import { LoginComponent } from '../app/Componant/login/login.component';
+import { RegisterComponent } from '../app/Componant/register/register.component';
+import { AdminDashboardComponent } from '../app/Componant/admin-dashboard/admin-dashboard.component';
+import { StaffDashboardComponent } from '../app/Componant/staff-dashboard/staff-dashboard.component';
+import { CustomerDashboardComponent } from '../app/Componant/customer-dashboard/customer-dashboard.component';
+import { HomeComponent } from '../app/Componant/home/home.component';
+import { NavbarComponent } from '../app/Componant/navbar/navbar.component';
+import { ProductComponent } from '../app/Componant/product/product.component';
+import { BookingComponent } from '../app/Componant/booking/booking.component';
+import { ContectComponent } from '../app/Componant/contect/contect.component';
+import { AboutComponent } from '../app/Componant/about/about.component';
+import { AdminLoginComponent } from '../app/Componant/admin-login/admin-login.component';
+import { DashboardStructureComponent } from '../app/Componant/dashboard-structure/dashboard-structure.component';
+import { ReservationDataComponent } from '../app/Componant/reservation-data/reservation-data.component';
+import { ReservationManagerComponent } from '../app/Componant/reservation-manager-component/reservation-manager-component.component';
+import { CustomerQueryComponent } from '../app/Componant/customer-query/customer-query.component';
 // import { RoleGuardService } from './services/role-guard.service';
 
 const routes: Routes = [
@@ -22,8 +27,14 @@ const routes: Routes = [
   { path: 'booking', component: BookingComponent },
   { path: 'contact', component: ContectComponent },
   { path: 'about', component: AboutComponent },
-
-
+  { path: 'adminlogin', component: AdminLoginComponent },
+  { path: 'dashboard', component: DashboardStructureComponent },
+  { path: 'reservationdata', component: ReservationDataComponent },
+  { path: 'reservationview', component: ReservationManagerComponent },
+  { path: 'customerquarry', component: CustomerQueryComponent },
+  { path: 'admindashboard', component: AdminDashboardComponent },
+  { path: 'staffdashboard', component: StaffDashboardComponent },
+  { path: 'customerdashboard', component: CustomerDashboardComponent },
 
 
   // { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [RoleGuardService], data: { expectedRole: 'admin' } },

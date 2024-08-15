@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>Reservation Management</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ reservation.name }}</td>
+                <td>{{ reservation.date | date: 'mediumDate' }}</td>
+                <td>{{ reservation.status }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="selectReservation(reservation)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteReservation(reservation.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="selectedReservation" class="card">
+        <div class="card-body">
+            <h5 class="card-title">Edit Reservation</h5>
+            <div>
+                <label>Name:</label>
+                <input [(ngModel)]="selectedReservation.name" type="text" class="form-control">
+            </div>
+            <div>
+                <label>Date:</label>
+                <input [(ngModel)]="selectedReservation.date" type="date" class="form-control">
+            </div>
+            <div>
+                <label>Status:</label>
+                <select [(ngModel)]="selectedReservation.status" class="form-control">
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
+            <button class="btn btn-success" (click)="saveReservation()">Save</button>
+            <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+        </div>
+    </div>
+</div>

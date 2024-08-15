@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <h2 class="mb-3">Dashboard</h2>
+    <div class="row">
+        <!-- Key Metrics Panel -->
+        <div class="col-md-6">
+            <div class="card metrics-card">
+                <div class="card-header">
+                    Key Metrics
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Total Reservations: {{ totalReservations }}</li>
+                    <li class="list-group-item">Today's Reservations: {{ todaysReservations }}</li>
+                    <li class="list-group-item">Pending Reservations: {{ pendingReservations }}</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Reservation Overview Panel -->
+        <div class="col-md-6">
+            <div class="card overview-card">
+                <div class="card-header">
+                    Reservation Overview
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let reservation of reservations; let i = index">
+                                <th scope="row">{{ i + 1 }}</th>
+                                <td>{{ reservation.name }}</td>
+                                <td>{{ reservation.date | date }}</td>
+                                <td>{{ reservation.status }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

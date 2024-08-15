@@ -1,0 +1,16 @@
+<div class="query-form">
+    <h2>Submit Your Query</h2>
+    <form (ngSubmit)="submitQuery()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="query.name" name="name" required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="query.email" name="email" required>
+  
+      <label for="message">Message:</label>
+      <textarea id="message" [(ngModel)]="query.message" name="message" required></textarea>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

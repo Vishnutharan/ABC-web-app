@@ -1,5 +1,5 @@
-interface LoginRequest {
-    username: string;
-    passwordHash: string;
-  }
-  
+export interface LoginRequest {
+  userType: string;
+  username: string;
+  passwordHash: string;
+}

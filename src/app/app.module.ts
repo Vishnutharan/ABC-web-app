@@ -3,24 +3,44 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
-import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
-// import { AuthService } from './services/auth.service';
-// import { RoleGuardService } from './services/role-guard.service';
+import { NavbarComponent } from '../app/Componant/navbar/navbar.component';
+import { LoginComponent } from '../app/Componant/login/login.component';
+import { RegisterComponent } from '../app/Componant/register/register.component';
+import { AdminDashboardComponent } from '../app/Componant/admin-dashboard/admin-dashboard.component';
+import { StaffDashboardComponent } from '../app/Componant/staff-dashboard/staff-dashboard.component';
+import { CustomerDashboardComponent } from '../app/Componant/customer-dashboard/customer-dashboard.component';
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
-import { ProductComponent } from './product/product.component';
-import { BookingComponent } from './booking/booking.component';
-import { ContectComponent } from './contect/contect.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from '../app/Componant/home/home.component';
+import { ProductComponent } from '../app/Componant/product/product.component';
+import { BookingComponent } from '../app/Componant/booking/booking.component';
+import { ContectComponent } from '../app/Componant/contect/contect.component';
+import { AboutComponent } from '../app/Componant/about/about.component';
+import { AdminLoginComponent } from '../app/Componant/admin-login/admin-login.component';
+import { DashboardStructureComponent } from '../app/Componant/dashboard-structure/dashboard-structure.component';
+import { ReservationDataComponent } from '../app/Componant/reservation-data/reservation-data.component';
+import { ReservationManagerComponent } from '../app/Componant/reservation-manager-component/reservation-manager-component.component';
+import { QueryManagementSystemComponent } from '../app/Componant/query-management-system/query-management-system.component';
+import { CustomerQueryComponent } from '../app/Componant/customer-query/customer-query.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 @NgModule({
+  exports: [
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule
+  ],
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -34,13 +54,26 @@ import { AboutComponent } from './about/about.component';
     BookingComponent,
     ContectComponent,
     AboutComponent,
+    AdminLoginComponent,
+    DashboardStructureComponent,
+    ReservationDataComponent,
+    ReservationManagerComponent,
+    QueryManagementSystemComponent,
+    CustomerQueryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    HttpClientModule
+
   ],
   providers: [ UserService],
   bootstrap: [AppComponent]

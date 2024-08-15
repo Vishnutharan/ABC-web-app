@@ -1,0 +1,17 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.card {
+    margin-top: 20vh; /* Adjusts the vertical alignment */
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
