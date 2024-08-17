@@ -1,39 +1,24 @@
-.login-form {
-  margin-top: 50px;
+.card {
+  border: none; /* Removes border from card */
 }
 
-.login-form .card {
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.card-header h2 {
+  font-weight: bold;
 }
 
-.login-form .card-header {
-  background-color: #5bc0de;
-  color: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+.card-body .form-label {
+  color: white; /* Ensures all labels have white text */
 }
 
-.login-form .form-control {
-  border-radius: 30px;
-  font-size: 1.2rem;
-  padding: 20px;
+.card-body .form-control {
+  border-radius: 0.25rem; /* Slightly rounded corners for inputs */
 }
 
-.login-form .btn-primary {
-  background-color: #5bc0de;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
+.card-body .btn {
   width: 100%;
 }
 
-.login-form .btn-primary:hover {
-  background-color: #31b0d5;
-}
-
-.login-form .alert-danger {
-  border-radius: 30px;
-  font-size: 1rem;
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }

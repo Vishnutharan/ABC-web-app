@@ -1,25 +1,47 @@
 <div class="login-form container mt-5">
+  <!-- Main container for the login form with some top margin -->
   <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8">
-      <div class="card">
-        <div class="card-header text-center">
+    <!-- Centers the form horizontally within the row -->
+    <div class="col-lg-4 col-md-5 d-none d-md-block">
+      <!-- Left column for the image, hidden on small screens -->
+      <img src="assets/login.png" alt="Login Image" class="img-fluid">
+      <!-- Replace 'assets/image.png' with the actual path to your image -->
+    </div>
+    <div class="col-lg-6 col-md-7">
+      <!-- Right column for the form, adjusts width based on screen size -->
+      <div class="card" style="background-color: #007bff;">
+        <!-- Bootstrap card component with blue background color -->
+        <div class="card-header text-center text-white">
+          <!-- Card header with centered white text -->
           <h2>Login</h2>
+          <!-- Form heading -->
         </div>
         <div class="card-body p-5">
+          <!-- Card body with padding -->
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- Binds formGroup to the form and handles form submission -->
             <div class="form-group mb-4">
-              <label for="userType" class="form-label">User Type:</label>
-              <select id="userType" formControlName="userType" class="form-control">
+              <!-- Form group with bottom margin -->
+              <label for="userType" class="form-label text-white">User Type:</label>
+              <!-- Label for the user type dropdown with white text -->
+              <select id="userType" formControlName="userTypes" class="form-control">
+                <!-- Dropdown for selecting user type -->
                 <option value="admin">Admin</option>
+                <!-- Admin option -->
                 <option value="staff">Restaurant Staff</option>
+                <!-- Staff option -->
                 <option value="customer">Customer</option>
+                <!-- Customer option -->
               </select>
               <div *ngIf="userType?.invalid && (userType?.dirty || userType?.touched)" class="alert alert-danger">
+                <!-- Error message if userType is invalid and touched/dirty -->
                 User Type is required.
               </div>
             </div>
             <div class="form-group mb-4">
-              <label for="username" class="form-label">Username:</label>
+              <!-- Form group for the username input -->
+              <label for="username" class="form-label text-white">Username:</label>
+              <!-- Label for username input with white text -->
               <input
                 type="text"
                 id="username"
@@ -27,11 +49,14 @@
                 class="form-control"
               />
               <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
+                <!-- Error message if username is invalid and touched/dirty -->
                 Username is required.
               </div>
             </div>
             <div class="form-group mb-4">
-              <label for="password" class="form-label">Password:</label>
+              <!-- Form group for the password input -->
+              <label for="password" class="form-label text-white">Password:</label>
+              <!-- Label for password input with white text -->
               <input
                 type="password"
                 id="password"
@@ -39,15 +64,19 @@
                 class="form-control"
               />
               <div *ngIf="passwordHash?.invalid && (passwordHash?.dirty || passwordHash?.touched)" class="alert alert-danger">
+                <!-- Error message if passwordHash is invalid and touched/dirty -->
                 Password is required.
               </div>
             </div>
             <div class="form-group text-center mb-4">
-              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+              <!-- Form group for the submit button, centered -->
+              <button type="submit" class="btn btn-light" [disabled]="loginForm.invalid">
+                <!-- Submit button, disabled if form is invalid -->
                 Login
               </button>
             </div>
             <div *ngIf="errorMessage" class="alert alert-danger text-center">
+              <!-- Error message display, centered -->
               {{ errorMessage }}
             </div>
           </form>

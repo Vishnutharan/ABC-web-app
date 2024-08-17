@@ -1,40 +1,66 @@
-.register-form {
-    margin-top: 50px;
-  }
-  
-  .register-form .card {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .register-form .card-header {
-    background-color: #5bc0de;
-    color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  
-  .register-form .form-control {
-    border-radius: 30px;
-    font-size: 1.2rem;
-    padding: 20px;
-  }
-  
-  .register-form .btn-primary {
-    background-color: #5bc0de;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    width: 100%;
-  }
-  
-  .register-form .btn-primary:hover {
-    background-color: #31b0d5;
-  }
-  
-  .register-form .alert-danger {
-    border-radius: 30px;
-    font-size: 1rem;
-  }
-  
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.register-container {
+  max-width: 1200px;
+}
+
+.register-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #337ab7; /* Blue background color for image container */
+  padding: 20px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.register-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.register-form-container {
+  flex: 1.5;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #337ab7; /* Blue color for header */
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.form-control {
+  border-radius: 30px;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: 2px solid #337ab7; /* Blue border for input fields */
+}
+
+.btn-primary {
+  background-color: #337ab7; /* Blue color for button */
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+  background-color: #286090; /* Darker blue on hover */
+}
+
+.alert-danger {
+  border-radius: 30px;
+  font-size: 1rem;
+}
