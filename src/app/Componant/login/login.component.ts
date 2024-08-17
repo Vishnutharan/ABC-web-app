@@ -28,7 +28,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { userType, username, passwordHash } = this.loginForm.value;
-      const loginRequest: LoginRequest = { userType, username, passwordHash };
+      const loginRequest: LoginRequest = {  username, passwordHash };
 
       this.userService.login(loginRequest).subscribe({
         next: () => {
