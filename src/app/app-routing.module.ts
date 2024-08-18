@@ -16,6 +16,7 @@ import { DashboardStructureComponent } from '../app/Componant/dashboard-structur
 import { ReservationDataComponent } from '../app/Componant/reservation-data/reservation-data.component';
 import { ReservationManagerComponent } from '../app/Componant/reservation-manager-component/reservation-manager-component.component';
 import { CustomerQueryComponent } from '../app/Componant/customer-query/customer-query.component';
+import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
 // import { RoleGuardService } from './services/role-guard.service';
 
 const routes: Routes = [
@@ -35,7 +36,9 @@ const routes: Routes = [
   { path: 'admindashboard', component: AdminDashboardComponent },
   { path: 'staffdashboard', component: StaffDashboardComponent },
   { path: 'customerdashboard', component: CustomerDashboardComponent },
+  { path: 'addtocard', component: AddtocardComponent },
 
+  
 
   // { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [RoleGuardService], data: { expectedRole: 'admin' } },
   // { path: 'staff-dashboard', component: StaffDashboardComponent, canActivate: [RoleGuardService], data: { expectedRole: 'staff' } },

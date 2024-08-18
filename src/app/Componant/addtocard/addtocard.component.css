@@ -1,0 +1,38 @@
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card-img-top {
+    max-height: 300px; /* Adjust based on your preference */
+    object-fit: cover;
+  }
+  
+  .quantity-input .btn {
+    width: 40px; /* Ensures a square appearance for buttons */
+  }
+  
+  .quantity-input input {
+    max-width: 60px; /* Keeps the input box from becoming too wide */
+  }
+  
+  .btn-primary {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  .btn-outline-primary {
+    color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  .w-100 {
+    width: 100%;
+    margin-top: 10px; /* Adds space between the input group and the button */
+  }
+  

@@ -1,29 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" routerLink="/">
-          <img src="./assets/Screenshot 2024-08-12 010307.png" alt="logo">
-        </a>
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContents">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContents">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="nav">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="product">Products</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="contact">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="booking"><i class="fas fa-user-plus"></i> Booking</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="dashboard"><i class="fas fa-user-plus"></i> Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="reservationdata"><i class="fas fa-sign-in-alt"></i> Reservation Data</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="reservationview"><i class="fas fa-sign-in-alt"></i> Reservation View</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="customerquarry"><i class="fas fa-sign-in-alt"></i> Customer Quarry</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="admindashboard"><i class="fas fa-sign-in-alt"></i> Admin Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="register"><i class="fas fa-user-plus"></i> Register</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-indigo">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="home">
+      <img src="./assets/Screenshot 2024-08-12 010307.png" alt="logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <!-- More nav items -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" routerLink="booking">Booking</a></li>
+            <li><a class="dropdown-item" routerLink="dashboard">Dashboard</a></li>
+            <!-- More dropdown items -->
           </ul>
-        </div>
-      </nav>
-      <router-outlet></router-outlet>
-      
+        </li>
+        <!-- Login and Register -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

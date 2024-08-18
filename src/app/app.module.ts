@@ -30,6 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
 
 
 
@@ -60,6 +61,7 @@ import { MatListModule } from '@angular/material/list';
     ReservationManagerComponent,
     QueryManagementSystemComponent,
     CustomerQueryComponent,
+    AddtocardComponent,
   ],
   imports: [
     BrowserModule,

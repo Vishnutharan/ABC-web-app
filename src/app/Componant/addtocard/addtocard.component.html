@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="card">
+    <img src="/assets/65394afebc3706aa799155f9_event ideas.jpg" class="card-img-top" alt="Product Image">
+    <div class="card-body">
+      <h5 class="card-title">Elegant Ceramic Plate</h5>
+      <p class="card-text">This beautifully crafted ceramic plate is perfect for adding a touch of elegance to your dining set.</p>
+      <div class="input-group mb-3 quantity-input">
+        <button class="btn btn-outline-primary" type="button" (click)="decrement()">-</button>
+        <input type="text" class="form-control text-center" [(ngModel)]="quantity" readonly>
+        <button class="btn btn-outline-primary" type="button" (click)="increment()">+</button>
+      </div>
+      <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+    </div>
+  </div>
+</div>

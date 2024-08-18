@@ -19,7 +19,7 @@ export class RegisterComponent {
   ) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      passwordHash: ['', Validators.required],
+      password: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
   }
@@ -37,8 +37,8 @@ export class RegisterComponent {
     return this.registerForm.get('username');
   }
 
-  get passwordHash() {
-    return this.registerForm.get('passwordHash');
+  get password() {
+    return this.registerForm.get('password');
   }
 
   get email() {
