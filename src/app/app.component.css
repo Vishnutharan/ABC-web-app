@@ -1,31 +1,55 @@
 body {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .navbar {
-    background-color: #4B0082; /* Indigo */
-    padding: 1rem 2rem;
-  }
-  
-  .navbar-brand img {
-    height: 40px;
-  }
-  
-  .navbar-nav .nav-link {
-    color: white !important;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover, .navbar-nav .dropdown-menu .dropdown-item:hover {
-    color: #ffcc00 !important; /* Highlight color */
-  }
-  
-  .navbar-toggler {
-    border: none;
-  }
-  
-  .navbar-toggler:focus, .navbar-toggler:active {
-    outline: none;
-    box-shadow: none;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Light background */
+  color: #333; /* Default text color */
+}
+
+.navbar {
+  background-color: #4B0082; /* Indigo */
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #ffcc00; /* Add a bottom border for emphasis */
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  padding: 0.75rem 1.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  color: #4B0082 !important; /* Darker color on hover */
+  background-color: #ffcc00 !important; /* Highlight color */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #4B0082; /* Indigo background for dropdown */
+  border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #ffffff;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path stroke="rgba%28255,%20255,%20255,%20255%29" stroke-width="2" linecap="round" linejoin="round" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+  /* Custom icon color */
+}
+
+.dropdown-menu {
+  margin-top: 0.5rem; /* Add some space between the dropdown and the navbar */
+}

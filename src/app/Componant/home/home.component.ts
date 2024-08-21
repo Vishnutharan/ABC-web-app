@@ -11,10 +11,10 @@ import { PaymentComponent } from 'src/app/Componant/payment/payment.component';
 })
 export class HomeComponent implements OnInit {
   menuItems = [
-    { name: 'Pork Sandwich', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/HD-wallpaper-burgers-fast-food-delicious-food-sandwiches-harmful-food.jpg' },
-    { name: 'Biriyani', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/grilled-prawn.jpg' },
-    { name: 'kothu barota', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/food-ccsaubvss63lkcyb.jpg' },
-    { name: 'Noodles', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/8-restaurant-event-ideas-example-family-deals.jpg' },
+    { name: 'Pork Sandwich', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/sand2.webp' },
+    { name: 'Biriyani', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/biriyani1.webp' },
+    { name: 'kothu barota', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/kothu2.webp' },
+    { name: 'Noodles', description: 'They\'re wherein heaven seed hath nothing.', price: 40.00, img: '/assets/noodel1.webp' },
 
   ];
 
