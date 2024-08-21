@@ -12,7 +12,7 @@ import { CustomerDashboardComponent } from '../app/Componant/customer-dashboard/
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../app/Componant/home/home.component';
-import { ProductComponent } from '../app/Componant/product/product.component';
+import { ProductsComponent } from '../app/Componant/product/product.component';
 import { BookingComponent } from '../app/Componant/booking/booking.component';
 import { ContectComponent } from '../app/Componant/contect/contect.component';
 import { AboutComponent } from '../app/Componant/about/about.component';
@@ -31,7 +31,8 @@ import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
-
+import { PaymentComponent } from './Componant/payment/payment.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -51,7 +52,7 @@ import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
     StaffDashboardComponent,
     CustomerDashboardComponent,
     HomeComponent,
-    ProductComponent,
+    ProductsComponent,
     BookingComponent,
     ContectComponent,
     AboutComponent,
@@ -62,6 +63,7 @@ import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
     QueryManagementSystemComponent,
     CustomerQueryComponent,
     AddtocardComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
 
   ],
   providers: [ UserService],

@@ -2,3 +2,26 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Import Bootstrap first */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Import Tailwind CSS */
+@import 'tailwindcss/tailwind.css';
+
+/* Your custom CSS */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Example of using prefixed Tailwind classes */
+.tw-bg-light {
+  background-color: #f8f9fa;
+}
+
+.tw-py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

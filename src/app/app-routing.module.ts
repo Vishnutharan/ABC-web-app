@@ -7,7 +7,7 @@ import { StaffDashboardComponent } from '../app/Componant/staff-dashboard/staff-
 import { CustomerDashboardComponent } from '../app/Componant/customer-dashboard/customer-dashboard.component';
 import { HomeComponent } from '../app/Componant/home/home.component';
 import { NavbarComponent } from '../app/Componant/navbar/navbar.component';
-import { ProductComponent } from '../app/Componant/product/product.component';
+import { ProductsComponent } from '../app/Componant/product/product.component';
 import { BookingComponent } from '../app/Componant/booking/booking.component';
 import { ContectComponent } from '../app/Componant/contect/contect.component';
 import { AboutComponent } from '../app/Componant/about/about.component';
@@ -17,13 +17,14 @@ import { ReservationDataComponent } from '../app/Componant/reservation-data/rese
 import { ReservationManagerComponent } from '../app/Componant/reservation-manager-component/reservation-manager-component.component';
 import { CustomerQueryComponent } from '../app/Componant/customer-query/customer-query.component';
 import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
+import { PaymentComponent } from './Componant/payment/payment.component';
 // import { RoleGuardService } from './services/role-guard.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'product', component: ProductComponent },
+  { path: 'product', component: ProductsComponent },
   { path: 'nav', component: NavbarComponent },
   { path: 'booking', component: BookingComponent },
   { path: 'contact', component: ContectComponent },
@@ -37,13 +38,7 @@ const routes: Routes = [
   { path: 'staffdashboard', component: StaffDashboardComponent },
   { path: 'customerdashboard', component: CustomerDashboardComponent },
   { path: 'addtocard', component: AddtocardComponent },
-
-  
-
-  // { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [RoleGuardService], data: { expectedRole: 'admin' } },
-  // { path: 'staff-dashboard', component: StaffDashboardComponent, canActivate: [RoleGuardService], data: { expectedRole: 'staff' } },
-  // { path: 'customer-dashboard', component: CustomerDashboardComponent, canActivate: [RoleGuardService], data: { expectedRole: 'customer' } },
-  // { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'Payment', component: PaymentComponent },
 
 
 ];

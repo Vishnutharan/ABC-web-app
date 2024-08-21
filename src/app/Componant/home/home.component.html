@@ -1,5 +1,6 @@
 <!-- Hero Section -->
-<section class="hero-section d-flex align-items-center" style="background-image: url('/assets/DALL·E 2024-08-14 01.16.44 - A photo of ABC Restaurant, showcasing its inviting and vibrant interior. The restaurant features a mix of modern and traditional decor, comfortable se.webp');">
+<section class="hero-section d-flex align-items-center"
+    style="background-image: url('/assets/DALL·E 2024-08-14 01.16.44 - A photo of ABC Restaurant, showcasing its inviting and vibrant interior. The restaurant features a mix of modern and traditional decor, comfortable se.webp');">
     <div class="container text-center">
         <h1 class="animate__animated animate__fadeIn">Welcome to ABC Restaurant</h1>
         <p class="lead animate__animated animate__fadeIn">Welcome to your ultimate destination for exquisite and
@@ -20,8 +21,8 @@
                     exceptional service has made us a favorite among locals and tourists alike.</p>
             </div>
             <div class="col-lg-6">
-                <img src="/assets/DALL·E 2024-08-14 01.12.12 - A photo of ABC Restaurant, showing a welcoming and vibrant dining atmosphere. The interior should feature a mix of modern and traditional decor, with .webp " alt="Restaurant Interior"
-                    class="img-fluid animate__animated animate__fadeIn">
+                <img src="/assets/DALL·E 2024-08-14 01.12.12 - A photo of ABC Restaurant, showing a welcoming and vibrant dining atmosphere. The interior should feature a mix of modern and traditional decor, with .webp "
+                    alt="Restaurant Interior" class="img-fluid animate__animated animate__fadeIn">
             </div>
         </div>
         <div class="row align-items-center mb-4">
@@ -33,8 +34,8 @@
                     excellence and innovation.</p>
             </div>
             <div class="col-lg-6 order-lg-1">
-                <img src="/assets/DALL·E 2024-08-14 01.19.06 - A photo representing ABC Restaurant's vision. The image should feature a diverse group of happy people enjoying their meals, symbolizing community and.webp " alt="Restaurant Vision"
-                    class="img-fluid animate__animated animate__fadeIn">
+                <img src="/assets/DALL·E 2024-08-14 01.19.06 - A photo representing ABC Restaurant's vision. The image should feature a diverse group of happy people enjoying their meals, symbolizing community and.webp "
+                    alt="Restaurant Vision" class="img-fluid animate__animated animate__fadeIn">
             </div>
         </div>
         <div class="row align-items-center">
@@ -65,13 +66,15 @@
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
             <div class="col-md-4 special-offer-item animate__animated animate__zoomIn">
-                <img src="/assets/DALL·E 2024-08-14 01.06.06 - An attractive advertisement for ABC Restaurant's special food offer. The ad should feature a mouth-watering display of a variety of dishes including a.webp" alt="Weekend Brunch" class="img-fluid mb-3">
+                <img src="/assets/DALL·E 2024-08-14 01.06.06 - An attractive advertisement for ABC Restaurant's special food offer. The ad should feature a mouth-watering display of a variety of dishes including a.webp"
+                    alt="Weekend Brunch" class="img-fluid mb-3">
                 <h5>Weekend Brunch</h5>
                 <p>Join us for an all-you-can-eat brunch every Saturday and Sunday from 10 AM to 2 PM.</p>
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
             <div class="col-md-4 special-offer-item animate__animated animate__zoomIn">
-                <img src="/assets/DALL·E 2024-08-14 01.07.11 - An attractive advertisement for ABC Restaurant's special food offer featuring Indian dishes. The ad should display a mouth-watering biriyani, a variet.webp" alt="Family Meal Deal" class="img-fluid mb-3">
+                <img src="/assets/DALL·E 2024-08-14 01.07.11 - An attractive advertisement for ABC Restaurant's special food offer featuring Indian dishes. The ad should display a mouth-watering biriyani, a variet.webp"
+                    alt="Family Meal Deal" class="img-fluid mb-3">
                 <h5>Family Meal Deal</h5>
                 <p>Get a free dessert with every family meal ordered on Mondays.</p>
                 <a href="#" class="btn btn-primary">Learn More</a>
@@ -79,6 +82,7 @@
         </div>
     </div>
 </section>
+
 <!-- Menu Section -->
 <div class="container menu-section py-5">
     <h2 class="text-center mb-4 animate__animated animate__fadeIn">Delicious Food Menu</h2>
@@ -90,79 +94,42 @@
         <a href="#">Snacks</a>
     </div>
     <div class="row">
-        <div class="col-md-6 menu-category animate__animated animate__zoomIn">
+        <div *ngFor="let item of menuItems" class="col-md-6 menu-category animate__animated animate__zoomIn">
             <div class="menu-item d-flex">
-                <img src="/assets/HD-wallpaper-burgers-fast-food-delicious-food-sandwiches-harmful-food.jpg"
-                    alt="Pork Sandwich" class="img-fluid mr-3">
+                <img [src]="item.img" alt="{{ item.name }}" class="img-fluid mr-3">
                 <div>
-                    <h5>Pork Sandwich</h5>
-                    <p>They're wherein heaven seed hath nothing.</p>
-                    <span class="price">$40.00</span>
-                    <button class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 menu-category animate__animated animate__zoomIn">
-            <div class="menu-item d-flex">
-                <img src="/assets/HD-wallpaper-cakes-food-cake-fruit-caramel-dessert-sweet.jpg" alt="Easter Delight"
-                    class="img-fluid mr-3">
-                <div>
-                    <h5>Easter Delight</h5>
-                    <p>They're wherein heaven seed hath nothing.</p>
-                    <span class="price">$40.00</span>
-                    <button class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 menu-category animate__animated animate__zoomIn">
-            <div class="menu-item d-flex">
-                <img src="/assets/HD-wallpaper-chocolate-cake-cake-food-chocolate-black-sweet-dessert.jpg"
-                    alt="Roasted Marrow" class="img-fluid mr-3">
-                <div>
-                    <h5>Roasted Marrow</h5>
-                    <p>They're wherein heaven seed hath nothing.</p>
-                    <span class="price">$40.00</span>
-                    <button class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 menu-category animate__animated animate__zoomIn">
-            <div class="menu-item d-flex">
-                <img src="/assets/HD-wallpaper-food-brownie.jpg" alt="Tiener Schnitze" class="img-fluid mr-3">
-                <div>
-                    <h5>Tiener Schnitze</h5>
-                    <p>They're wherein heaven seed hath nothing.</p>
-                    <span class="price">$40.00</span>
-                    <button class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 menu-category animate__animated animate__zoomIn">
-            <div class="menu-item d-flex">
-                <img src="/assets/pngtree-photo-of-kfc-fried-chicken-wings-image_1025919.jpg" alt="Summer Cooking"
-                    class="img-fluid mr-3">
-                <div>
-                    <h5>Summer Cooking</h5>
-                    <p>They're wherein heaven seed hath nothing.</p>
-                    <span class="price">$40.00</span>
-                    <button class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 menu-category animate__animated animate__zoomIn">
-            <div class="menu-item d-flex">
-                <img src="/assets/pngtree-3d-rendering-of-delicious-ice-cream-image_3767223.jpg" alt="Chicken Roast"
-                    class="img-fluid mr-3">
-                <div>
-                    <h5>Chicken Roast</h5>
-                    <p>They're wherein heaven seed hath nothing.</p>
-                    <span class="price">$40.00</span>
-                    <button class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    <h5>{{ item.name }}</h5>
+                    <p>{{ item.description }}</p>
+                    <span class="price">{{ item.price | currency }}</span>
+                    <button class="btn btn-primary add-to-cart" (click)="openModal(item)">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                    <button class="btn btn-primary Payment" (click)="openPaymentModal()">
+                        Payment
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Modal Section -->
+<div *ngIf="selectedItem" class="modal animate__animated animate__zoomIn">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <img [src]="selectedItem.img" alt="{{ selectedItem.name }}" class="img-fluid">
+        <h5>{{ selectedItem.name }}</h5>
+        <p>{{ selectedItem.description }}</p>
+        <div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" [(ngModel)]="quantity" (change)="updateTotal()">
+        </div>
+        <span>Total: {{ total | currency }}</span>
+        <button class="btn btn-primary Payment" (click)="openPaymentModal()">
+            Payment
+        </button>
+    </div>
+</div>
+
 <!-- Testimonials Section -->
 <section class="testimonials-section py-5">
     <div class="container">

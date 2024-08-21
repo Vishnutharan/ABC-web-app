@@ -1,113 +1,41 @@
-<div class="container my-5">
-    <h2 class="text-center mb-4">Our Exclusive Items</h2>
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="/assets/6476fd5a9fa97008b3ded602_1685519706838.jpg" class="card-img-top product-img"
-                    alt="Indian Burger">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Indian Burger</h5>
-                    <p class="product-price">$9.99</p>
-                    <p class="product-text">A delicious Indian-style burger with a blend of spices and fresh
-                        ingredients.</p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="/assets/fast-food.jpg" class="card-img-top product-img" alt="Cremy Noodles">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Cremy Noodles</h5>
-                    <p class="product-price">$7.99</p>
-                    <p class="product-text">Creamy noodles with a rich sauce, topped with fresh herbs and spices.</p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="./assets/grilled-prawn.jpg" class="card-img-top product-img" alt="Honey Meat">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Honey Meat</h5>
-                    <p class="product-price">$12.99</p>
-                    <p class="product-text">Succulent meat glazed with honey, served with a side of fresh vegetables.
-                    </p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="/assets/6476fd5a9fa97008b3ded602_1685519706838.jpg" class="card-img-top product-img"
-                    alt="Indian Burger">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Indian Burger</h5>
-                    <p class="product-price">$9.99</p>
-                    <p class="product-text">A delicious Indian-style burger with a blend of spices and fresh
-                        ingredients.</p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="/assets/fast-food.jpg" class="card-img-top product-img" alt="Cremy Noodles">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Cremy Noodles</h5>
-                    <p class="product-price">$7.99</p>
-                    <p class="product-text">Creamy noodles with a rich sauce, topped with fresh herbs and spices.</p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="./assets/grilled-prawn.jpg" class="card-img-top product-img" alt="Honey Meat">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Honey Meat</h5>
-                    <p class="product-price">$12.99</p>
-                    <p class="product-text">Succulent meat glazed with honey, served with a side of fresh vegetables.
-                    </p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="/assets/6476fd5a9fa97008b3ded602_1685519706838.jpg" class="card-img-top product-img"
-                    alt="Indian Burger">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Indian Burger</h5>
-                    <p class="product-price">$9.99</p>
-                    <p class="product-text">A delicious Indian-style burger with a blend of spices and fresh
-                        ingredients.</p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="/assets/fast-food.jpg" class="card-img-top product-img" alt="Cremy Noodles">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Cremy Noodles</h5>
-                    <p class="product-price">$7.99</p>
-                    <p class="product-text">Creamy noodles with a rich sauce, topped with fresh herbs and spices.</p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="./assets/grilled-prawn.jpg" class="card-img-top product-img" alt="Honey Meat">
-                <div class="card-body product-info">
-                    <h5 class="product-title">Honey Meat</h5>
-                    <p class="product-price">$12.99</p>
-                    <p class="product-text">Succulent meat glazed with honey, served with a side of fresh vegetables.
-                    </p>
-                    <button class="btn add-to-cart mt-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<h2>Product List</h2>
+<div *ngIf="products$ | async as products; else loading">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <ng-container *ngIf="editingProduct?.id === product.id; else viewMode">
+          <td><input [(ngModel)]="editingProduct!.id" disabled></td>
+          <td><input [(ngModel)]="editingProduct!.productName"></td>
+          <td><input [(ngModel)]="editingProduct!.description"></td>
+          <td><input [(ngModel)]="editingProduct!.price" type="number"></td>
+          <td>
+            <button (click)="updateProduct()">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </td>
+        </ng-container>
+        <ng-template #viewMode>
+          <td>{{ product.id }}</td>
+          <td>{{ product.productName }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>
+            <button (click)="startEdit(product)">Edit</button>
+            <button (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
 </div>
+<ng-template #loading>
+  <p>Loading products...</p>
+</ng-template>

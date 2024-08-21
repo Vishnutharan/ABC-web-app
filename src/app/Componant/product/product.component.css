@@ -1,54 +1,34 @@
-body {
-    font-family: 'Arial', sans-serif;
-}
-.product-card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s;
-}
-.product-card:hover {
-    transform: scale(1.05);
-}
-.product-img {
-    height: 200px;
-    object-fit: cover;
-}
-.product-info {
-    padding: 20px;
-}
-.product-title {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-.product-price {
-    color: #ff6f61;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.product-text {
-    color: #6c757d;
-    margin-bottom: 20px;
-}
-.read-more {
-    text-decoration: none;
-    color: #ff6f61;
-    font-weight: bold;
-}
-.read-more:hover {
-    color: #ff3f3f;
-}
-.add-to-cart {
-    background-color: #ff6f61;
-    border: none;
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+  }
+  td {
+    background-color: #f2f2f2;
+  }
+  button {
+    border: none;
+    outline: none;
+    padding: 8px;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-.add-to-cart:hover {
-    background-color: #ff3f3f;
-}
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+  }
+  .update-button {
+    background-color: #4CAF50;
+    color: white;
+  }
