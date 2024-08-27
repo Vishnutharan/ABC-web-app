@@ -1,0 +1,76 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Order Management</h2>
+
+    <!-- Order Form -->
+    <div class="card mb-4">
+        <div class="card-header">Add or Update Order</div>
+        <div class="card-body">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="orderId">Order ID</label>
+                        <input type="number" class="form-control" id="orderId" placeholder="Enter Order ID">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="status">Status</label>
+                        <select class="form-control" id="status">
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="customer">Customer</label>
+                        <input type="text" class="form-control" id="customer" placeholder="Customer Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col mb-3">
+                        <label for="items">Items</label>
+                        <input type="text" class="form-control" id="items" placeholder="List of Items">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order List -->
+    <div class="card">
+        <div class="card-header">Order List</div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Items</th>
+                        <th>Customer</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data -->
+                    <tr>
+                        <td>1</td>
+                        <td>2024-08-28</td>
+                        <td>Completed</td>
+                        <td>3</td>
+                        <td>John Doe</td>
+                        <td>
+                            <button class="btn btn-info btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Repeat for other orders -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

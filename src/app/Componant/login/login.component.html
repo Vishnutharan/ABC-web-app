@@ -1,16 +1,16 @@
-<div class="login-form container mt-5">
+<div class="login-form container mt-5 animate__animated animate__fadeIn">
   <div class="row justify-content-center">
     <div class="col-lg-4 col-md-5 d-none d-md-block">
-      <img src="assets/login.png" alt="Login Image" class="img-fluid">
+      <img src="assets/login.png" alt="Login Image" class="img-fluid animate__animated animate__bounceInLeft">
     </div>
     <div class="col-lg-6 col-md-7">
-      <div class="form-container">
+      <div class="form-container animate__animated animate__zoomIn">
         <p class="title">Login</p>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
           <div class="input-group">
             <label for="username">Username</label>
             <input type="text" id="username" formControlName="username" placeholder="" />
-            <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="alert alert-danger animate__animated animate__shakeX">
               Username is required.
             </div>
           </div>
@@ -20,14 +20,14 @@
             <div class="forgot">
               <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
             </div>
-            <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="alert alert-danger animate__animated animate__shakeX">
               Password is required.
             </div>
           </div>
           <button type="submit" class="sign" [disabled]="loginForm.invalid">
             Sign in
           </button>
-          <div *ngIf="errorMessage" class="alert alert-danger text-center">
+          <div *ngIf="errorMessage" class="alert alert-danger text-center animate__animated animate__fadeIn">
             {{ errorMessage }}
           </div>
         </form>
@@ -37,13 +37,13 @@
           <div class="line"></div>
         </div>
         <div class="social-icons">
-          <button aria-label="Log in with Google" class="icon">
+          <button aria-label="Log in with Google" class="icon google">
             <!-- SVG for Google -->
           </button>
-          <button aria-label="Log in with Twitter" class="icon">
+          <button aria-label="Log in with Twitter" class="icon twitter">
             <!-- SVG for Twitter -->
           </button>
-          <button aria-label="Log in with GitHub" class="icon">
+          <button aria-label="Log in with GitHub" class="icon github">
             <!-- SVG for GitHub -->
           </button>
         </div>

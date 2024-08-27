@@ -1,0 +1,96 @@
+<!-- add-sub-admin.component.html -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Sub Admin
+            </a>
+          </li>
+          <!-- Add more menu items as needed -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Add Sub Admin</h1>
+      </div>
+
+      <form [formGroup]="subAdminForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" class="form-control" id="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+          <label for="mobileNo">Mobile No. *</label>
+          <input type="tel" class="form-control" id="mobileNo" formControlName="mobileNo" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password *</label>
+          <input type="password" class="form-control" id="password" formControlName="password" required>
+        </div>
+
+        <div class="form-group">
+          <label>Privilege *</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" (change)="selectAll($event)" id="selectAll">
+            <label class="form-check-label" for="selectAll">Select All</label>
+          </div>
+          
+          <table class="table table-bordered mt-3" formGroupName="privileges">
+            <thead>
+              <tr>
+                <th></th>
+                <th>View</th>
+                <th>Add</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr formGroupName="category">
+                <td>Category</td>
+                <td><input type="checkbox" formControlName="view"></td>
+                <td><input type="checkbox" formControlName="add"></td>
+                <td><input type="checkbox" formControlName="edit"></td>
+                <td><input type="checkbox" formControlName="delete"></td>
+              </tr>
+              <tr formGroupName="choices">
+                <td>Choices</td>
+                <td><input type="checkbox" formControlName="view"></td>
+                <td><input type="checkbox" formControlName="add"></td>
+                <td><input type="checkbox" formControlName="edit"></td>
+                <td><input type="checkbox" formControlName="delete"></td>
+              </tr>
+              <tr formGroupName="merchant">
+                <td>Merchant</td>
+                <td><input type="checkbox" formControlName="view"></td>
+                <td><input type="checkbox" formControlName="add"></td>
+                <td><input type="checkbox" formControlName="edit"></td>
+                <td><input type="checkbox" formControlName="delete"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!subAdminForm.valid">Submit</button>
+      </form>
+    </main>
+  </div>
+</div>

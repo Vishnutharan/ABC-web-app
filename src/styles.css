@@ -8,6 +8,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Import Tailwind CSS */
 @import 'tailwindcss/tailwind.css';
 
+/* styles.css */
+@import "~animate.css/animate.min.css";
+
+
 /* Your custom CSS */
 body {
   font-family: 'Roboto', sans-serif;

@@ -33,6 +33,11 @@ import { MatListModule } from '@angular/material/list';
 import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
 import { PaymentComponent } from './Componant/payment/payment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductManagementComponent } from './Componant/product-management/product-management.component';
+import { CustomerManagementComponent } from './Componant/customer-management/customer-management.component';
+import { PaymentManagementComponent } from './Componant/payment-management/payment-management.component';
+import { OrderManagementComponent } from './Componant/order-management/order-management.component';
+import { StaffManagementComponent } from './Componant/staff-management/staff-management.component';
 
 
 @NgModule({
@@ -64,6 +69,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CustomerQueryComponent,
     AddtocardComponent,
     PaymentComponent,
+    ProductManagementComponent,
+    CustomerManagementComponent,
+    PaymentManagementComponent,
+    OrderManagementComponent,
+    StaffManagementComponent,
   ],
   imports: [
     BrowserModule,

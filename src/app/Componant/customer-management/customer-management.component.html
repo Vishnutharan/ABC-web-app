@@ -1,0 +1,56 @@
+<div class="sidebar">
+    <h2>SHOPUS FOOD</h2>
+    <ul>
+        <li><strong>Customer Order Management</strong></li>
+        <!-- Add more menu items here -->
+    </ul>
+</div>
+<div class="main-content">
+    <div class="header">
+        <h2>Customer Order Management</h2>
+    </div>
+    <div class="search-filter">
+        <h3>Search Filter</h3>
+        <form (submit)="onSearch($event)" id="searchForm">
+            <input type="text" placeholder="Order ID" [(ngModel)]="searchCriteria.orderId" name="orderId">
+            <input type="date" placeholder="From Date" [(ngModel)]="searchCriteria.fromDate" name="fromDate">
+            <input type="date" placeholder="To Date" [(ngModel)]="searchCriteria.toDate" name="toDate">
+            <select [(ngModel)]="searchCriteria.orderStatus" name="orderStatus">
+                <option>Order Status</option>
+                <option>Success</option>
+                <option>Pending</option>
+                <option>Failed</option>
+            </select>
+            <button class="btn" type="submit">Search</button>
+            <button class="btn reset-btn" type="reset" (click)="onReset()">Reset</button>
+        </form>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Customer Name</th>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <th>Order Amount</th>
+                    <th>Payment Status</th>
+                    <th>Invoice</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ order.customerName }}</td>
+                    <td>{{ order.orderId }}</td>
+                    <td>{{ order.orderDate }}</td>
+                    <td>{{ order.orderAmount }}</td>
+                    <td>{{ order.paymentStatus }}</td>
+                    <td>{{ order.invoice }}</td>
+                    <td>{{ order.actions }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

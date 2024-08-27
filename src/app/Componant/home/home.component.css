@@ -755,3 +755,43 @@ p {
 .image-container img:hover {
     transform: scale(1.1);
 }
+/* Custom CSS for Angular Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 140px);
+    background-size: cover;
+    background-position: center;
+    background-color: #2f4f4f;
+    color: #f0e68c;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #f0e68c;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #f0e68c;
+}
+
+.hero-section .btn-primary,
+.hero-section .btn-secondary {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #f0e68c;
+    color: #f0e68c;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.hero-section .btn-primary:hover,
+.hero-section .btn-secondary:hover {
+    background-color: #f0e68c;
+    color: #2f4f4f;
+}

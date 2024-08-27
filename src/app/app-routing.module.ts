@@ -18,6 +18,11 @@ import { ReservationManagerComponent } from '../app/Componant/reservation-manage
 import { CustomerQueryComponent } from '../app/Componant/customer-query/customer-query.component';
 import { AddtocardComponent } from './Componant/addtocard/addtocard.component';
 import { PaymentComponent } from './Componant/payment/payment.component';
+import { ProductManagementComponent } from './Componant/product-management/product-management.component';
+import { CustomerManagementComponent } from './Componant/customer-management/customer-management.component';
+import { PaymentManagementComponent } from './Componant/payment-management/payment-management.component';
+import { OrderManagementComponent } from './Componant/order-management/order-management.component';
+import { StaffManagementComponent } from './Componant/staff-management/staff-management.component';
 // import { RoleGuardService } from './services/role-guard.service';
 
 const routes: Routes = [
@@ -39,7 +44,11 @@ const routes: Routes = [
   { path: 'customerdashboard', component: CustomerDashboardComponent },
   { path: 'addtocard', component: AddtocardComponent },
   { path: 'Payment', component: PaymentComponent },
-
+  { path: 'product-management', component: ProductManagementComponent },
+  { path: 'customer-management', component: CustomerManagementComponent },
+  { path: 'payment-management', component: PaymentManagementComponent },
+  { path: 'order-management', component: OrderManagementComponent },
+  { path: 'staff-management', component: StaffManagementComponent },
 
 ];
 
