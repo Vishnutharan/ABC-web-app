@@ -795,3 +795,100 @@ p {
     background-color: #f0e68c;
     color: #2f4f4f;
 }
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: auto;
+    max-width: 500px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.item-details h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.item-details p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.quantity-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity-section input {
+    width: 60px;
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.total-section {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.total-amount {
+    font-weight: bold;
+}
+
+.buttons-section .btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.payment-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.print-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Additional styling for hover effects and responsiveness */
+.buttons-section .btn:hover {
+    opacity: 0.8;
+}

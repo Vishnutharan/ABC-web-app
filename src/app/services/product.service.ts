@@ -31,4 +31,8 @@ export class ProductService {
   deleteProduct(id: number): Observable<Product> {
     return this.http.delete<Product>(`${this.apiUrl}/${id}`);
   }
+
+  downloadProductList(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/download`, { responseType: 'blob' });
+  }
 }

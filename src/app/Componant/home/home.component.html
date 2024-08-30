@@ -1,9 +1,9 @@
 <!-- Hero Section -->
-<section class="hero-section d-flex align-items-center"
-    style="background-image: url('/assets/Abcrest.webp');">
+<section class="hero-section d-flex align-items-center" style="background-image: url('/assets/Abcrest.webp');">
     <div class="container text-center">
         <h1>Welcome to ABC Restaurant</h1>
-        <p>Welcome to your ultimate destination for exquisite and authentic dining experiences in Sri Lanka. We pride ourselves on culinary excellence and exceptional hospitality across our various locations.</p>
+        <p>Welcome to your ultimate destination for exquisite and authentic dining experiences in Sri Lanka. We pride
+            ourselves on culinary excellence and exceptional hospitality across our various locations.</p>
         <a class="btn btn-primary" routerLink="booking">Make a Reservation</a>
         <a class="btn btn-secondary" href="#">Watch Our Story</a>
     </div>
@@ -117,20 +117,28 @@
 <!-- Modal Section -->
 <div *ngIf="selectedItem" class="modal animate__animated animate__zoomIn">
     <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <img [src]="selectedItem.img" alt="{{ selectedItem.name }}" class="img-fluid">
-        <h5>{{ selectedItem.name }}</h5>
-        <p>{{ selectedItem.description }}</p>
-        <div>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" min="1" [(ngModel)]="quantity" (change)="updateTotal()">
+        <span class="close-btn" (click)="closeModal()">&times;</span>
+        <div class="item-image">
+            <img [src]="selectedItem.img" alt="{{ selectedItem.name }}" class="img-fluid">
         </div>
-        <span>Total: {{ total | currency }}</span>
-        <button class="btn btn-primary Payment" (click)="openPaymentModal()">
-            Payment
-        </button>
+        <div class="item-details">
+            <h5>{{ selectedItem.name }}</h5>
+            <p>{{ selectedItem.description }}</p>
+            <div class="quantity-section">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" [(ngModel)]="quantity" (change)="updateTotal()">
+            </div>
+            <div class="total-section">
+                Total: <span class="total-amount">{{ total | currency }}</span>
+            </div>
+            <div class="buttons-section">
+                <button class="btn btn-primary payment-btn" (click)="openPaymentModal()">Payment</button>
+                <button class="btn btn-primary print-btn" (click)="printPDF()" *ngIf="selectedItem">Print PDF</button>
+            </div>
+        </div>
     </div>
 </div>
+
 
 <!-- Testimonials Section -->
 <section class="testimonials-section py-5">

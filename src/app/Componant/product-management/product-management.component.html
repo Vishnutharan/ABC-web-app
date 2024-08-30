@@ -1,17 +1,12 @@
 <div class="sidebar">
-    <div class="logo">Shomus Food</div>
-    <div class="menu-item">Home</div>
+    <div class="logo">ABC Rest Food</div>
     <div class="menu-item active">Item Management</div>
     <div class="menu-item">Add Item</div>
-    <div class="menu-item">Manage Item</div>
-    <div class="menu-item">Item Bulk Update</div>
 </div>
 <div class="main-content">
     <div class="header">
         <h2>Manage Item</h2>
         <div class="header-buttons">
-            <button class="btn" (click)="blockItem()">Block</button>
-            <button class="btn" (click)="unblockItem()">Unblock</button>
             <button class="btn" (click)="deleteItem()">Delete</button>
             <button class="btn download-btn" (click)="downloadList()">Download List</button>
         </div>
@@ -21,19 +16,36 @@
             <thead>
                 <tr>
                     <th>Item Name</th>
-                    <th>Item Code</th>
-                    <th>Restaurant Name</th>
-                    <th>Original Price</th>
-                    <th>Discounted Price</th>
-                    <th>Item Image</th>
-                    <th>Stock Available</th>
-                    <th>Actions</th>
-                    <th>Added By</th>
+                    <th>Item Taste</th>
+                    <th>Item Price</th>
+                    <th>Item Description</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let product of products$ | async">
+                    <ng-container *ngIf="editingProduct?.id === product.id; else viewMode">
+                        <td><input [(ngModel)]="editingProduct!.id" disabled></td>
+                        <td><input [(ngModel)]="editingProduct!.productName"></td>
+                        <td><input [(ngModel)]="editingProduct!.description"></td>
+                        <td><input [(ngModel)]="editingProduct!.price" type="number"></td>
+                        <td>
+                            <button (click)="updateProduct()">Save</button>
+                            <button (click)="cancelEdit()">Cancel</button>
+                        </td>
+                    </ng-container>
+                    <ng-template #viewMode>
+                        <!-- <td>{{ product.id }}</td> -->
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price | currency }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>
+                            <button (click)="deleteProduct(product.id)">Add</button>
+                            <button (click)="startEdit(product)">Edit</button>
+                            <button (click)="deleteProduct(product.id)">Delete</button>
+                        </td>
+                    </ng-template>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Table rows will be dynamically added here -->
-            </tbody>
         </table>
     </div>
 </div>

@@ -55,3 +55,4 @@ export class ProductsComponent implements OnInit {
     console.error(message, error);
   }
 }
+
