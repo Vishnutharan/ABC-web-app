@@ -38,6 +38,7 @@ import { CustomerManagementComponent } from './Componant/customer-management/cus
 import { PaymentManagementComponent } from './Componant/payment-management/payment-management.component';
 import { OrderManagementComponent } from './Componant/order-management/order-management.component';
 import { StaffManagementComponent } from './Componant/staff-management/staff-management.component';
+import { AdLoginComponent } from './Componant/ad-login/ad-login.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { StaffManagementComponent } from './Componant/staff-management/staff-man
     PaymentManagementComponent,
     OrderManagementComponent,
     StaffManagementComponent,
+    AdLoginComponent,
   ],
   imports: [
     BrowserModule,

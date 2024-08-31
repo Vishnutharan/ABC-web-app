@@ -25,16 +25,17 @@ export class ProductManagementComponent implements OnInit {
   startEdit(product: Product): void {
     this.editingProduct = { ...product };
   }
-
+  
   updateProduct(): void {
     if (this.editingProduct) {
+      console.log('Product to update:', this.editingProduct);
       this.productService.updateProduct(this.editingProduct).subscribe({
         next: () => this.onSaveSuccess(),
         error: (err: any) => this.handleError('Failed to update product', err)
       });
     }
   }
-
+  
   deleteProduct(id: number): void {
     this.productService.deleteProduct(id).subscribe({
       next: () => this.loadProducts(),

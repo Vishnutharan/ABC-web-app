@@ -1,0 +1,95 @@
+.container {
+  max-width: 500px;
+  background: linear-gradient(145deg, #3a3a52, #121212); /* Dark and deeper gradient */
+  border-radius: 30px;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+  color: #d4af37; /* Gold text color */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.heading {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.form {
+  margin-top: 30px;
+}
+
+.form .input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  border: none;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  font-size: 1.2em;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.form .input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+}
+
+.form .forgot-password {
+  display: block;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.form .forgot-password a {
+  font-size: 1em;
+  color: #d4af37; /* Gold color for links */
+  text-decoration: underline;
+}
+
+.form .login-button {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(145deg, #333333, #121212); /* Dark gradient button */
+  color: #d4af37; /* Gold text color */
+  padding: 15px;
+  margin-top: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.form .login-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: #d4af37; /* Gold color */
+  font-size: 1em;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+  color: #e63946; /* Lighter red for better contrast with dark background */
+  margin-top: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+}

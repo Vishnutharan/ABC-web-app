@@ -1,7 +1,7 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
     color: #333;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
@@ -11,45 +11,45 @@ body {
     margin: auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .icon-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .icon-card {
-    flex: 1;
-    min-width: 250px;
+    flex-basis: calc(25% - 20px); /* Responsive base width */
     margin: 10px;
     background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .icon-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .icon-card img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .icon-card h3 {
-    color: #0056b3;
-    margin-top: 10px;
+    color: #007bff; /* Brighter color for headings */
+    margin-top: 15px;
 }
 
 .icon-card p {
-    font-size: 14px;
-    color: #666;
+    font-size: 16px; /* Larger font size */
+    color: #555;
 }
 
 .content-wrapper {
@@ -73,19 +73,19 @@ body {
     width: 48%;
     margin: 1%;
     transition: transform 0.3s ease-in-out;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .image-gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .about-us {
     flex: 1;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .stats {
@@ -94,16 +94,16 @@ body {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .stat-item h3 {
-    font-size: 24px;
-    color: #d35400;
+    font-size: 28px; /* Larger font size for numbers */
+    color: #e67e22; /* A warmer color */
 }
 
 .stat-item p {
-    color: #555;
-    font-size: 16px;
+    color: #666;
+    font-size: 18px; /* Increased font size */
 }

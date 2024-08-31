@@ -23,6 +23,7 @@ import { CustomerManagementComponent } from './Componant/customer-management/cus
 import { PaymentManagementComponent } from './Componant/payment-management/payment-management.component';
 import { OrderManagementComponent } from './Componant/order-management/order-management.component';
 import { StaffManagementComponent } from './Componant/staff-management/staff-management.component';
+import { AdLoginComponent } from './Componant/ad-login/ad-login.component';
 // import { RoleGuardService } from './services/role-guard.service';
 
 const routes: Routes = [
@@ -49,6 +50,8 @@ const routes: Routes = [
   { path: 'payment-management', component: PaymentManagementComponent },
   { path: 'order-management', component: OrderManagementComponent },
   { path: 'staff-management', component: StaffManagementComponent },
+  { path: 'adLogin', component: AdLoginComponent },
+
 
 ];
 

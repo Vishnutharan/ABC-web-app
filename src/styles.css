@@ -11,6 +11,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* styles.css */
 @import "~animate.css/animate.min.css";
 
+/* Correct placement */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url('another-stylesheet.css');
+
+/* Your CSS rules */
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 /* Your custom CSS */
 body {

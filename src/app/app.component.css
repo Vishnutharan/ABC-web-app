@@ -29,7 +29,7 @@
 }
 
 .dropdown-item {
-  color: #f0e68c;
+  color: #f0e68c; /* Ensures visibility against the dark background */
 }
 
 .dropdown-item:hover {

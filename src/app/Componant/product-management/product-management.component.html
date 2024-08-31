@@ -4,7 +4,9 @@
     <div class="menu-item">Add Item</div>
 </div>
 <div class="main-content">
+
     <div class="header">
+        <button class="btn btn-secondary"  routerLink="/admindashboard">Back</button>
         <h2>Manage Item</h2>
         <div class="header-buttons">
             <button class="btn" (click)="deleteItem()">Delete</button>
@@ -27,6 +29,7 @@
                         <td><input [(ngModel)]="editingProduct!.productName"></td>
                         <td><input [(ngModel)]="editingProduct!.description"></td>
                         <td><input [(ngModel)]="editingProduct!.price" type="number"></td>
+                      
                         <td>
                             <button (click)="updateProduct()">Save</button>
                             <button (click)="cancelEdit()">Cancel</button>
