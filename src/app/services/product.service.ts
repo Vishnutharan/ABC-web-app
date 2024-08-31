@@ -42,7 +42,8 @@ export class ProductService {
   }
   
 
-deleteProduct(productId: number): Observable<any> {
-  return this.http.delete(`${this.apiUrl}/${productId}`);  // Changed from id to productId
-}
+  deleteProduct(id: number): Observable<void> {
+    return this.http.delete<void>(`/api/products/${id}`);
+  }
+  
 }

@@ -1,7 +1,9 @@
+// src/app/components/product-management/product-management.component.ts
+
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/Product';
-import { ProductService } from 'src/app/services/product.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-product-management',
@@ -9,82 +11,69 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-management.component.css']
 })
 export class ProductManagementComponent implements OnInit {
-  products$: Observable<Product[]> = new Observable();
-  editingProduct: Product | null = null;
+  products: Product[] = [];
+  selectedProduct: Product | null = null;
+  productForm: FormGroup;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private fb: FormBuilder) {
+    this.productForm = this.fb.group({
+      id: [0],
+      productName: [''],
+      price: [0],
+      description: ['']
+    });
+  }
 
   ngOnInit(): void {
     this.loadProducts();
   }
 
   loadProducts(): void {
-    this.products$ = this.productService.getProducts();
-  }
-
-  startEdit(product: Product): void {
-    this.editingProduct = { ...product };
+    this.productService.getProducts().subscribe(data => {
+      console.log('Fetched products:', data);
+      this.products = data;
+    });
   }
   
-  updateProduct(): void {
-    if (this.editingProduct) {
-      console.log('Product to update:', this.editingProduct);
-      this.productService.updateProduct(this.editingProduct).subscribe({
-        next: () => this.onSaveSuccess(),
-        error: (err: any) => this.handleError('Failed to update product', err)
+  
+  
+
+  selectProduct(product: Product): void {
+    console.log('Selected product:', product);
+    this.selectedProduct = product;
+    this.productForm.patchValue(product);
+  }
+  
+
+  saveProduct(): void {
+    if (this.productForm.value.id) {
+      this.productService.updateProduct(this.productForm.value).subscribe(() => {
+        this.loadProducts();
+        this.clearForm();
+      });
+    } else {
+      this.productService.addProduct(this.productForm.value).subscribe(() => {
+        this.loadProducts();
+        this.clearForm();
       });
     }
   }
-  
+
   deleteProduct(id: number): void {
-    this.productService.deleteProduct(id).subscribe({
-      next: () => this.loadProducts(),
-      error: (err: any) => this.handleError('Failed to delete product', err)
+    const testId = 1; // Replace 1 with a valid product ID from your database
+    this.productService.deleteProduct(testId).subscribe(() => {
+      this.loadProducts();
+    }, error => {
+      console.error('Failed to delete product:', error);
     });
   }
+  
+  
+  
+  
 
-  cancelEdit(): void {
-    this.editingProduct = null;
-  }
-
-  blockItem(): void {
-    // Implement logic to block an item
-    console.log('Item blocked');
-  }
-
-  unblockItem(): void {
-    // Implement logic to unblock an item
-    console.log('Item unblocked');
-  }
-
-  deleteItem(): void {
-    // Implement logic to delete an item
-    console.log('Item deleted');
-  }
-
-  downloadList(): void {
-    this.productService.downloadProductList().subscribe({
-      next: (data: Blob) => {
-        const blob = new Blob([data], { type: 'text/csv' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'products_list.csv';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-      },
-      error: (err: any) => this.handleError('Failed to download the list', err)
-    });
-  }
-
-  private onSaveSuccess(): void {
-    this.loadProducts();
-    this.editingProduct = null;
-  }
-
-  private handleError(message: string, error: any): void {
-    console.error(message, error);
+  clearForm(): void {
+    this.selectedProduct = null;
+    this.productForm.reset({ id: 0, productName: '', price: 0, description: '' });
   }
 }

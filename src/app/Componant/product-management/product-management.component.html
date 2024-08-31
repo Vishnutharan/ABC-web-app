@@ -1,54 +1,61 @@
-<div class="sidebar">
-    <div class="logo">ABC Rest Food</div>
-    <div class="menu-item active">Item Management</div>
-    <div class="menu-item">Add Item</div>
-</div>
-<div class="main-content">
-
-    <div class="header">
-        <button class="btn btn-secondary"  routerLink="/admindashboard">Back</button>
-        <h2>Manage Item</h2>
-        <div class="header-buttons">
-            <button class="btn" (click)="deleteItem()">Delete</button>
-            <button class="btn download-btn" (click)="downloadList()">Download List</button>
+<!-- src/app/components/product-management/product-management.component.html -->
+<div class="d-flex">
+    <!-- Side Navigation -->
+    <nav id="sidebar" class="bg-dark text-light p-4">
+      <h3 class="text-light mb-4">Dashboard</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="#" class="nav-link text-light">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light active">Products</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">Orders</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">Customers</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Main Content -->
+    <div class="container-fluid p-4 flex-grow-1">
+      <div class="product-management">
+        <button class="btn btn-secondary" routerLink="/admindashboard">Back</button>
+        <h2 class="mb-4 text-primary">Product Management</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <form [formGroup]="productForm" (ngSubmit)="saveProduct()" class="card shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="productName" class="form-label">Product Name:</label>
+                  <input id="productName" formControlName="productName" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="price" class="form-label">Price:</label>
+                  <input id="price" formControlName="price" type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description:</label>
+                  <textarea id="description" formControlName="description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <button type="submit" class="btn btn-primary">{{ selectedProduct ? 'Update' : 'Add' }} Product</button>
+                  <button type="button" (click)="clearForm()" class="btn btn-secondary">Clear</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title">Product List</h3>
+                <ul class="list-group list-group-flush">
+                  <li *ngFor="let product of products" class="list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeIn">
+                    <span>{{ product.productName }} - ${{ product.price }}</span>
+                    <div>
+                      <button (click)="selectProduct(product)" class="btn btn-sm btn-outline-primary me-2">Edit</button>
+                      <button (click)="deleteProduct(product.id)" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="table-container">
-        <table id="itemTable">
-            <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Item Taste</th>
-                    <th>Item Price</th>
-                    <th>Item Description</th>
-                    <th>Status</th>
-                </tr>
-                <tr *ngFor="let product of products$ | async">
-                    <ng-container *ngIf="editingProduct?.id === product.id; else viewMode">
-                        <td><input [(ngModel)]="editingProduct!.id" disabled></td>
-                        <td><input [(ngModel)]="editingProduct!.productName"></td>
-                        <td><input [(ngModel)]="editingProduct!.description"></td>
-                        <td><input [(ngModel)]="editingProduct!.price" type="number"></td>
-                      
-                        <td>
-                            <button (click)="updateProduct()">Save</button>
-                            <button (click)="cancelEdit()">Cancel</button>
-                        </td>
-                    </ng-container>
-                    <ng-template #viewMode>
-                        <!-- <td>{{ product.id }}</td> -->
-                        <td>{{ product.productName }}</td>
-                        <td>{{ product.description }}</td>
-                        <td>{{ product.price | currency }}</td>
-                        <td>{{ product.description }}</td>
-                        <td>
-                            <button (click)="deleteProduct(product.id)">Add</button>
-                            <button (click)="startEdit(product)">Edit</button>
-                            <button (click)="deleteProduct(product.id)">Delete</button>
-                        </td>
-                    </ng-template>
-                </tr>
-            </thead>
-        </table>
-    </div>
-</div>
+  </div>

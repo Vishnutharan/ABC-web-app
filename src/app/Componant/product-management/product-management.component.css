@@ -1,139 +1,51 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  display: flex;
-  background-color: #f0f2f5;
-}
+/* src/app/components/product-management/product-management.component.css */
+@import 'animate.css';
 
-.sidebar {
+#sidebar {
   width: 250px;
-  height: 100vh;
-  background-color: #1c2833;
-  color: white;
-  padding: 20px;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+#sidebar .nav-link:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+#sidebar .nav-link.active {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.product-management {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.card {
   transition: all 0.3s ease-in-out;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  color: #e67e22;
-  margin-bottom: 30px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
 }
 
-.menu-item {
-  padding: 15px;
-  background-color: #2e4053;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
+.list-group-item {
+  transition: background-color 0.2s ease-in-out;
 }
 
-.menu-item:hover {
-  background-color: #34495e;
-}
-
-.menu-item.active {
-  background-color: #e67e22;
-  color: white;
-}
-
-.main-content {
-  margin-left: 270px;
-  padding: 30px;
-  width: calc(100% - 270px);
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
-  background-color: #ecf0f1;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.header h2 {
-  margin: 0;
-  font-size: 24px;
-  color: #2c3e50;
-}
-
-.header-buttons .btn {
-  margin-left: 10px;
-  font-size: 14px;
-}
-
-.table-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 0.5s ease-in-out;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-  color: #2c3e50;
-}
-
-th {
-  background-color: #34495e;
-  color: white;
-  font-weight: bold;
-  border-top: none;
-}
-
-tbody tr:hover {
-  background-color: #f9f9f9;
+.list-group-item:hover {
+  background-color: #f8f9fa;
 }
 
 .btn {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 14px;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.download-btn {
-  background-color: #27ae60;
-}
-
-.download-btn:hover {
-  background-color: #2ecc71;
-}
-
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
