@@ -1,193 +1,108 @@
+/* General Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  display: flex;
-  background-color: #f0f2f5;
+  font-family: Arial, sans-serif; /* Set a nice default font */
+  margin: 0; /* Remove default margin for better layout */
 }
 
-.sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: #2c3e50;
+/* Wrapper */
+.wrapper {
+  display: flex; /* Make the wrapper a flex container */
+  min-height: 100vh; /* Set minimum height for full viewport */
+}
+
+/* Sidebar */
+#sidebar {
+  width: 250px; /* Adjust sidebar width as needed */
+  background-color:#113644; /* Keep your existing color */
+  padding: 20px; /* Add some padding for aesthetics */
+
+}
+.sidebar-header h3 {
   color: white;
-  padding: 20px;
-  position: fixed;
-  overflow-y: auto;
-  transition: all 0.3s ease-in-out;
+}
+.customer-management h2 {
+  color: rgb(141, 29, 29);
+}
+.sidebar-header {
+  text-align: center; /* Center sidebar header text */
+  margin-bottom: 20px; /* Add some space after the header */
 }
 
-.sidebar h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #ecf0f1;
+.sidebar-header h3 {
+  font-size: 1.2em; /* Adjust header font size */
+  margin: 0; /* Remove default margin for cleaner look */
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
+.list-unstyled {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
 }
 
-.sidebar li {
-  margin: 15px 0;
-  padding: 10px;
-  background-color: #34495e;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.list-unstyled li {
+  margin-bottom: 10px; /* Add spacing between list items */
 }
 
-.sidebar li:hover {
-  background-color: #1abc9c;
+.list-unstyled a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Set a dark color for link text */
+  display: block; /* Make links take full width of the list item */
+  padding: 5px 10px; /* Add some padding for link styling */
 }
 
-.main-content {
-  margin-left: 270px;
-  padding: 20px;
-  width: calc(100% - 270px);
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+.list-unstyled a:hover {
+  background-color: #eee; /* Add hover effect for links */
 }
 
-.header {
-  background-color: #ecf0f1;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Content Area */
+#content {
+  flex: 1; /* Make content area expand to fill remaining space */
+  padding: 20px; /* Add some padding for visual separation */
 }
 
-.header h2 {
-  margin: 0;
-  font-size: 22px;
-  color: #2c3e50;
+.customer-management {
+  background-color: #f5f5f5; /* Add a subtle background color for the content area */
+  padding: 20px; /* Add some padding within the content area */
+  border-radius: 5px; /* Add rounded corners for a softer look */
 }
 
-.search-filter {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+h2 {
+  margin-bottom: 15px; /* Add spacing after headings */
+  color: white
 }
 
-.search-filter h3 {
-  margin-top: 0;
-  color: #2c3e50;
-  font-size: 18px;
-  margin-bottom: 15px;
+.form-group {
+  margin-bottom: 10px; /* Add spacing between form elements */
 }
 
-.search-filter form {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.search-filter input,
-.search-filter select {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: calc(25% - 12px);
-  transition: border 0.3s ease;
-}
-
-.search-filter input:focus,
-.search-filter select:focus {
-  border-color: #1abc9c;
+.form-group label {
+  display: block; /* Make labels on their own line */
+  margin-bottom: 5px; /* Add spacing between label and input */
 }
 
 .btn {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  background-color: #4CAF50; /* Set a nice green color for buttons */
+  color: white; /* Set white text for buttons */
+  padding: 10px 15px; /* Add padding for button size */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add rounded corners */
+  margin-right: 10px; /* Add spacing between buttons */
+  cursor: pointer; /* Indicate clickable button */
 }
 
 .btn:hover {
-  background-color: #c0392b;
+  background-color: #3e8e41; /* Change button color on hover */
 }
 
-.reset-btn {
-  background-color: #7f8c8d;
+.user-details,
+.all-users {
+  margin-top: 20px; /* Add spacing after user details and all users sections */
+  border: 1px solid #ddd; /* Add a thin border for separation */
+  padding: 10px; /* Add padding within these sections */
+  border-radius: 5px; /* Add rounded corners */
 }
 
-.reset-btn:hover {
-  background-color: #95a5a6;
-}
-
-.table-container {
-  max-height: 400px;
-  overflow-y: auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  background-color: #ffffff;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0;
-}
-
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  color: #2c3e50;
-}
-
-th {
-  background-color: #34495e;
-  color: white;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-  background-color: #f1f1f1;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-      width: 200px;
-  }
-  
-  .main-content {
-      margin-left: 220px;
-      width: calc(100% - 220px);
-  }
-}
-
-.sidebar, .main-content {
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(0);
-}
-
-.sidebar:hover {
-  transform: translateX(-20px);
-}
-
-.main-content:hover {
-  transform: translateX(20px);
-}
-
-.table-container {
-  animation: fadeInUp 0.5s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+.user-details p,
+.all-users ul li {
+  margin-bottom: 5px; /* Add spacing between user data and list items */
 }

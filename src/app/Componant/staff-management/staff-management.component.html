@@ -1,4 +1,5 @@
-<!-- add-sub-admin.component.html -->
+<!-- staff-management.component.html -->
+
 <div class="container-fluid">
   <div class="row">
     <!-- Sidebar -->
@@ -17,19 +18,22 @@
               Sub Admin
             </a>
           </li>
-          <!-- Add more menu items as needed -->
         </ul>
       </div>
     </nav>
-
     <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <button class="btn btn-secondary" routerLink="/admindashboard">Back</button>
-      <div
-        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Add Sub Admin</h1>
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+      <div class="pt-3 pb-2 mb-3">
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <button class="btn btn-sm btn-outline-secondary" routerLink="/admindashboard">
+            <span data-feather="arrow-left"></span> Back
+          </button>
+        </div>
+        <h1 class="h2">Manage Sub Admins</h1>
       </div>
-      <form [formGroup]="subAdminForm" (ngSubmit)="onSubmit()">
+
+      <!-- Add/Edit Sub Admin Form -->
+      <form [formGroup]="subAdminForm" (ngSubmit)="onSubmit()" class="form-bg p-3 rounded">
         <div class="form-group">
           <label for="name">Name *</label>
           <input type="text" class="form-control" id="name" formControlName="name" required>
@@ -43,55 +47,41 @@
           <input type="tel" class="form-control" id="mobileNo" formControlName="mobileNo" required>
         </div>
         <div class="form-group">
+          <label for="userName">User Name</label>
+          <input type="text" class="form-control" id="userName" formControlName="userName">
+        </div>
+        <div class="form-group">
           <label for="password">Password *</label>
           <input type="password" class="form-control" id="password" formControlName="password" required>
         </div>
-
-        <div class="form-group">
-          <label>Privilege *</label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" (change)="selectAll($event)" id="selectAll">
-            <label class="form-check-label" for="selectAll">Select All</label>
-          </div>
-
-          <table class="table table-bordered mt-3" formGroupName="privileges">
-            <thead>
-              <tr>
-                <th></th>
-                <th>View</th>
-                <th>Add</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr formGroupName="category">
-                <td>Category</td>
-                <td><input type="checkbox" formControlName="view"></td>
-                <td><input type="checkbox" formControlName="add"></td>
-                <td><input type="checkbox" formControlName="edit"></td>
-                <td><input type="checkbox" formControlName="delete"></td>
-              </tr>
-              <tr formGroupName="choices">
-                <td>Choices</td>
-                <td><input type="checkbox" formControlName="view"></td>
-                <td><input type="checkbox" formControlName="add"></td>
-                <td><input type="checkbox" formControlName="edit"></td>
-                <td><input type="checkbox" formControlName="delete"></td>
-              </tr>
-              <tr formGroupName="merchant">
-                <td>Merchant</td>
-                <td><input type="checkbox" formControlName="view"></td>
-                <td><input type="checkbox" formControlName="add"></td>
-                <td><input type="checkbox" formControlName="edit"></td>
-                <td><input type="checkbox" formControlName="delete"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <button type="submit" class="btn btn-primary" [disabled]="!subAdminForm.valid">Submit</button>
+        <button type="submit" class="btn btn-success" [disabled]="!subAdminForm.valid">Submit</button>
+        <button type="button" class="btn btn-warning" (click)="onReset()">Reset</button>
       </form>
+
+      <!-- Staff List -->
+      <div class="staff-list mt-4">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile No.</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let staff of staffList">
+              <td>{{ staff.name }}</td>
+              <td>{{ staff.email }}</td>
+              <td>{{ staff.phoneNumber }}</td>
+              <td>
+                <button class="btn btn-info btn-sm" (click)="editStaff(staff)">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="deleteStaff(staff.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
   </div>
 </div>

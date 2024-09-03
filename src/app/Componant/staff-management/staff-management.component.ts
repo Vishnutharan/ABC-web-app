@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Staff } from 'src/app/models/Staffs';
+import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
   selector: 'app-staff-management',
@@ -7,24 +9,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./staff-management.component.css']
 })
 export class StaffManagementComponent implements OnInit {
+  subAdminForm!: FormGroup; // Use definite assignment assertion
+  staffList: Staff[] = [];
 
-  subAdminForm!: FormGroup; // Using definite assignment assertion
-
-  initializeForm() {
-    throw new Error('Method not implemented.');
+  constructor(private fb: FormBuilder, private staffService: StaffService) {
+    this.initializeForm();
+    this.loadStaff();
   }
 
-  ngOnInit(): void {
-    // any additional initialization here
+  ngOnInit() {
+    this.subAdminForm = new FormGroup({
+      'name': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'mobileNo': new FormControl(null, Validators.required),
+      'userName': new FormControl(null),
+      'password': new FormControl(null, Validators.required)
+    });
   }
-
-
-  constructor(private fb: FormBuilder) {
+  private initializeForm(): void {
     this.subAdminForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      mobileNo: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      userName: [''],
+      password: ['', [Validators.required, Validators.minLength(4)]],
       privileges: this.fb.group({
         category: this.fb.group({
           view: [false],
@@ -49,21 +57,37 @@ export class StaffManagementComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.subAdminForm.valid) {
-      console.log(this.subAdminForm.value);
-      // Here you would typically send the form data to your backend
+    console.log('Form Submitted', this.subAdminForm.value);
+    if(this.subAdminForm.valid) {
+      // Your submission logic here
     }
   }
+  
 
-  selectAll(event: Event) {
-    const checkbox = event.target as HTMLInputElement;
-    const checked = checkbox.checked;
-    const privilegesControls = this.subAdminForm.get('privileges') as FormGroup;
-    Object.keys(privilegesControls.controls).forEach(key => {
-      const groupControl = privilegesControls.get(key) as FormGroup;
-      Object.keys(groupControl.controls).forEach(subKey => {
-        groupControl.get(subKey)?.setValue(checked);
-      });
+  onReset(): void {
+    this.subAdminForm.reset();
+  }
+
+  loadStaff(): void {
+    this.staffService.getAllStaff().subscribe({
+      next: data => this.staffList = data,
+      error: error => console.error('Error fetching staff list:', error)
     });
+  }
+
+  editStaff(staff: Staff): void {
+    this.subAdminForm.patchValue(staff);
+  }
+
+  deleteStaff(id: number): void {
+    if (confirm('Are you sure you want to delete this staff member?')) {
+      this.staffService.deleteStaff(id).subscribe({
+        next: () => {
+          console.log('Staff deleted successfully');
+          this.loadStaff();
+        },
+        error: error => console.error('Error deleting staff:', error)
+      });
+    }
   }
 }

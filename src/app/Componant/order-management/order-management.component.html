@@ -1,110 +1,138 @@
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Booking Management</h2>
-    <div class="text-right mb-3">
-      <button class="btn btn-secondary" routerLink="/admindashboard">Back</button>
-    </div>
-  
-    <!-- Booking Form -->
-    <div class="card mb-4">
-      <div class="card-header">Add or Update Booking</div>
-      <div class="card-body">
-        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-          <!-- Booking ID (hidden when adding) -->
-          <div *ngIf="currentBooking.id" class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="bookingId">Booking ID</label>
-              <input type="number" class="form-control" id="bookingId" placeholder="Booking ID" [(ngModel)]="currentBooking.id" name="id" readonly>
-            </div>
-          </div>
-  
-          <!-- Date -->
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="date">Date</label>
-              <input type="date" class="form-control" id="date" required [(ngModel)]="currentBooking.date" name="date">
-            </div>
-            <!-- Name -->
-            <div class="col-md-6 mb-3">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter Name" maxlength="100" required [(ngModel)]="currentBooking.name" name="name">
-            </div>
-          </div>
-  
-          <!-- Email and Persons -->
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter Email" required [(ngModel)]="currentBooking.email" name="email">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="persons">Number of Persons</label>
-              <input type="number" class="form-control" id="persons" placeholder="Enter Number of Persons" min="1" max="100" required [(ngModel)]="currentBooking.persons" name="persons">
-            </div>
-          </div>
-  
-          <!-- Phone Number and Time -->
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="phoneNumber">Phone Number</label>
-              <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" required [(ngModel)]="currentBooking.phoneNumber" name="phoneNumber">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="time">Time</label>
-              <input type="time" class="form-control" id="time" required [(ngModel)]="currentBooking.time" name="time">
-            </div>
-          </div>
-  
-          <!-- Note -->
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for="note">Note</label>
-              <input type="text" class="form-control" id="note" placeholder="Enter any notes (optional)" [(ngModel)]="currentBooking.note" name="note">
-            </div>
-          </div>
-  
-          <!-- Submit and Reset Button -->
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-warning" (click)="resetForm(form)">Reset</button>
-        </form>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-md-block bg-dark sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Sub Admin
+            </a>
+          </li>
+          <!-- Add more menu items as needed -->
+        </ul>
       </div>
-    </div>
-  
-    <!-- Booking List -->
-    <div class="card">
-      <div class="card-header">Booking List</div>
-      <div class="card-body">
-        <table class="table table-hover">
-          <thead class="thead-dark">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Persons</th>
-              <th>Phone Number</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Note</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let booking of bookings">
-              <td>{{ booking.id }}</td>
-              <td>{{ booking.name }}</td>
-              <td>{{ booking.email }}</td>
-              <td>{{ booking.persons }}</td>
-              <td>{{ booking.phoneNumber }}</td>
-              <td>{{ booking.date | date:'yyyy-MM-dd' }}</td>
-              <td>{{ booking.time }}</td>
-              <td>{{ booking.note }}</td>
-              <td>
-                <button class="btn btn-info btn-sm" (click)="onEdit(booking)">Edit</button>
-                <button class="btn btn-danger btn-sm" (click)="onDelete(booking.id)">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-md-10 ml-sm-auto col-lg-10 px-4">
+      <div class="container mt-5">
+        <h2 class="text-center mb-4">Booking Management</h2>
+        <div class="text-right mb-3">
+          <button class="btn btn-secondary" routerLink="/admindashboard">Back</button>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header bg-light">
+            <h4 class="my-0 font-weight-normal">Add or Update Booking</h4>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+              <!-- Booking ID (hidden when adding) -->
+              <div *ngIf="currentBooking.id" class="form-group">
+                <label for="bookingId">Booking ID</label>
+                <input type="number" class="form-control" id="bookingId" placeholder="Booking ID" [(ngModel)]="currentBooking.id" name="id" readonly>
+              </div>
+
+              <!-- Date and Name -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="date">Date</label>
+                  <input type="date" class="form-control" id="date" required [(ngModel)]="currentBooking.date" name="date">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Name" maxlength="100" required [(ngModel)]="currentBooking.name" name="name">
+                </div>
+              </div>
+
+              <!-- Email and Persons -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email" required [(ngModel)]="currentBooking.email" name="email">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="persons">Number of Persons</label>
+                  <input type="number" class="form-control" id="persons" placeholder="Enter Number of Persons" min="1" max="100" required [(ngModel)]="currentBooking.persons" name="persons">
+                </div>
+              </div>
+
+              <!-- Phone Number and Time -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" required [(ngModel)]="currentBooking.phoneNumber" name="phoneNumber">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="time">Time</label>
+                  <input type="time" class="form-control" id="time" required [(ngModel)]="currentBooking.time" name="time">
+                </div>
+              </div>
+
+              <!-- Note -->
+              <div class="form-group">
+                <label for="note">Note</label>
+                <input type="text" class="form-control" id="note" placeholder="Enter any notes (optional)" [(ngModel)]="currentBooking.note" name="note">
+              </div>
+
+              <!-- Submit and Reset Buttons -->
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-warning" (click)="resetForm(form)">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Booking List -->
+        <div class="card">
+          <div class="card-header bg-light">
+            <h4 class="my-0 font-weight-normal">Booking List</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Persons</th>
+                  <th>Phone </th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Note</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let booking of bookings">
+                  <td>{{ booking.id }}</td>
+                  <td>{{ booking.name }}</td>
+                  <td>{{ booking.email }}</td>
+                  <td>{{ booking.persons }}</td>
+                  <td>{{ booking.phoneNumber }}</td>
+                  <td>{{ booking.date | date:'yyyy-MM-dd' }}</td>
+                  <td>{{ booking.time }}</td>
+                  <td>{{ booking.note }}</td>
+                  <td>
+                    <button class="btn btn-info btn-sm" (click)="onEdit(booking)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="onDelete(booking.id)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   </div>
-  
+</div>
