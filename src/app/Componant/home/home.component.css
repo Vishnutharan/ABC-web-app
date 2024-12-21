@@ -892,3 +892,106 @@ p {
 .buttons-section .btn:hover {
     opacity: 0.8;
 }
+
+
+.menu-section {
+    background-color: #fff; /* White background for the section */
+    padding: 5rem 0; /* Ample padding for good spacing */
+}
+
+.menu-section h2 {
+    font-size: 2.5rem; /* Large, noticeable font size */
+    color: #4B0082; /* Indigo color for headings */
+    margin-bottom: 1.5rem; /* Space below the heading */
+    text-transform: uppercase; /* Uppercase letters for style */
+    animation: fadeInDown 0.5s; /* Animation for fade in */
+}
+
+.menu-categories {
+    margin-bottom: 2rem; /* Space below categories */
+    display: flex; /* Flex display for alignment */
+    justify-content: center; /* Center the links horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.menu-categories a {
+    font-size: 1.2rem; /* Medium font size */
+    color: #fff; /* White text color */
+    background-color: #4B0082; /* Indigo background */
+    padding: 0.5rem 1rem; /* Padding for a better touch area */
+    margin: 0.5rem; /* Margin around links */
+    border-radius: 25px; /* Rounded borders */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.menu-categories a.active,
+.menu-categories a:hover {
+    background-color: #301934; /* Darker indigo on hover/active */
+    color: #fff; /* Maintain white text on interaction */
+}
+
+.menu-item {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 2rem; /* Padding around items */
+    margin-bottom: 2rem; /* Space between menu items */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Slight raise effect on hover */
+}
+
+.menu-item img {
+    width: 80%; /* Restrict image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    margin-bottom: 1rem; /* Space below images */
+}
+
+.menu-item h5 {
+    color: #4B0082; /* Indigo text for item names */
+    margin-bottom: 0.5rem; /* Space below item name */
+}
+
+.menu-item p {
+    color: #666; /* Dark grey for description */
+    font-size: 1rem; /* Standard font size */
+    margin-bottom: 1rem; /* Space below description */
+}
+
+.menu-item .price {
+    font-size: 1.2rem; /* Slightly larger font for price */
+    color: #28a745; /* Green for prices */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.btn-primary {
+    background-color: #4B0082; /* Indigo background for primary button */
+    border-color: #4B0082; /* Indigo border for consistency */
+    color: #fff; /* White text color */
+}
+
+.btn-success {
+    background-color: #28a745; /* Green background for success button */
+    color: #fff; /* White text for readability */
+}
+
+.btn-primary:hover, .btn-success:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+}
+
+/* Add any necessary animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

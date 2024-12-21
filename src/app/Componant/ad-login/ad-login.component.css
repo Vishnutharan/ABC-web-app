@@ -1,77 +1,135 @@
-.container {
-  max-width: 500px;
-  background: linear-gradient(145deg, #3a3a52, #121212); /* Dark and deeper gradient */
-  border-radius: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
   padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-  color: #d4af37; /* Gold text color */
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
 }
 
 .heading {
-  font-size: 3.5em;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 2.5em;
+  font-weight: 600;
   margin-bottom: 30px;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .form {
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-.form .input {
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  padding: 10px;
   border: none;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 20px;
-  font-size: 1.2em;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-.form .input:focus {
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus {
   outline: none;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+  border-bottom-color: #4a90e2;
 }
 
-.form .forgot-password {
-  display: block;
-  margin-top: 15px;
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input:focus ~ label,
+.input:not(:placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #4a90e2;
+}
+
+.forgot-password {
   text-align: right;
+  margin-bottom: 20px;
 }
 
-.form .forgot-password a {
-  font-size: 1em;
-  color: #d4af37; /* Gold color for links */
-  text-decoration: underline;
+.forgot-password a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
-.form .login-button {
-  display: block;
-  width: 100%;
-  font-weight: bold;
-  background: linear-gradient(145deg, #333333, #121212); /* Dark gradient button */
-  color: #d4af37; /* Gold text color */
-  padding: 15px;
-  margin-top: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
+.forgot-password a:hover {
+  color: #4a90e2;
 }
 
-.form .login-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+.login-button {
+  background: #4a90e2;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.form .login-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+.login-button:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: #ff4757;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
 }
 
 .agreement {
@@ -81,15 +139,12 @@
 }
 
 .agreement a {
+  color: #ffffff;
   text-decoration: none;
-  color: #d4af37; /* Gold color */
-  font-size: 1em;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
-.error-message {
-  color: #e63946; /* Lighter red for better contrast with dark background */
-  margin-top: 15px;
-  font-size: 1.2em;
-  font-weight: bold;
+.agreement a:hover {
+  color: #4a90e2;
 }

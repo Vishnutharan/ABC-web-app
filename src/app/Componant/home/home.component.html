@@ -10,6 +10,7 @@
 </section>
 
 
+ 
 
 <!-- About Us Section -->
 <section class="about-us-section py-5" style="font-family: 'Times New Roman', Times, serif;">
@@ -87,8 +88,10 @@
 
 <!-- Menu Section -->
 <div class="container menu-section py-5">
-    <h2 class="text-center mb-4 animate__animated animate__fadeIn">Delicious Food Menu</h2>
-    <div class="menu-categories text-center mb-4 animate__animated animate__fadeIn">
+<!-- Menu Section -->
+<div class="container menu-section py-5">
+    <h2 class="text-center mb-4 animate__animated animate__fadeInDown">Delicious Food Menu</h2>
+    <div class="menu-categories text-center mb-4 animate__animated animate__fadeInUp">
         <a href="#" class="active">Special</a>
         <a href="#">Breakfast</a>
         <a href="#">Lunch</a>
@@ -96,18 +99,18 @@
         <a href="#">Snacks</a>
     </div>
     <div class="row">
-        <div *ngFor="let item of menuItems" class="col-md-6 menu-category animate__animated animate__zoomIn">
-            <div class="menu-item d-flex">
-                <img [src]="item.img" alt="{{ item.name }}" class="img-fluid mr-3">
-                <div>
+        <div *ngFor="let item of menuItems" class="col-md-6 col-lg-4 col-xl-3 menu-category animate__animated animate__zoomIn">
+            <div class="menu-item d-flex flex-column align-items-center">
+                <img [src]="item.img" alt="{{ item.name }}" class="img-fluid mb-3">
+                <div class="text-center">
                     <h5>{{ item.name }}</h5>
                     <p>{{ item.description }}</p>
                     <span class="price">{{ item.price | currency }}</span>
-                    <button class="btn btn-primary add-to-cart" (click)="openModal(item)">
+                    <button class="btn btn-primary add-to-cart mt-2" (click)="openModal(item)">
                         <i class="fas fa-cart-plus"></i> Add to Cart
                     </button>
-                    <button class="btn btn-primary Payment" (click)="openPaymentModal()">
-                        Payment
+                    <button class="btn btn-success payment mt-2" (click)="openPaymentModal()">
+                        <i class="fas fa-credit-card"></i> Payment
                     </button>
                 </div>
             </div>
@@ -356,7 +359,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>   
 
 <!-- Add the Google Font for Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">

@@ -1,55 +1,49 @@
-<div class="login-form container mt-5 animate__animated animate__fadeIn">
-  <div class="row justify-content-center">
-    <div class="col-lg-4 col-md-5 d-none d-md-block">
-      <img src="assets/login.png" alt="Login Image" class="img-fluid animate__animated animate__bounceInLeft">
-    </div>
-    <div class="col-lg-6 col-md-7">
-      <div class="form-container animate__animated animate__zoomIn">
-        <p class="title">Login</p>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
-          <div class="input-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" formControlName="username" placeholder="" />
-            <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="alert alert-danger animate__animated animate__shakeX">
-              Username is required.
+<div class="login-container animate__animated animate__fadeIn">
+  <div class="login-card">
+    <div class="row no-gutters">
+      <div class="col-md-6 d-none d-md-block">
+        <img src="assets/6184159_3094352.jpg" alt="Login Image" class="login-img animate__animated animate__bounceInLeft">
+      </div>
+      <div class="col-md-6">
+        <div class="login-form animate__animated animate__zoomIn">
+          <h2 class="text-center mb-4">Welcome Back</h2>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" formControlName="username" class="form-control" placeholder="Enter your username">
+              <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="error-message animate__animated animate__shakeX">
+                Username is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+              <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message animate__animated animate__shakeX">
+                Password is required.
+              </div>
+            </div>
+            <div class="form-group text-right">
+              <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">
+              Login
+            </button>
+            <div *ngIf="errorMessage" class="error-message text-center mt-3 animate__animated animate__fadeIn">
+              {{ errorMessage }}
+            </div>
+          </form>
+          <div class="social-login">
+            <p class="text-center">Or login with</p>
+            <div class="social-icons">
+              <button class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i></button>
+              <button class="btn btn-outline-danger"><i class="fab fa-google"></i></button>
+              <button class="btn btn-outline-dark"><i class="fab fa-github"></i></button>
             </div>
           </div>
-          <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" formControlName="password" placeholder="" />
-            <div class="forgot">
-              <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
-            </div>
-            <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="alert alert-danger animate__animated animate__shakeX">
-              Password is required.
-            </div>
-          </div>
-          <button type="submit" class="sign" [disabled]="loginForm.invalid">
-            Sign in
-          </button>
-          <div *ngIf="errorMessage" class="alert alert-danger text-center animate__animated animate__fadeIn">
-            {{ errorMessage }}
-          </div>
-        </form>
-        <div class="social-message">
-          <div class="line"></div>
-          <p class="message">Login with social accounts</p>
-          <div class="line"></div>
+          <p class="text-center mt-3">
+            Don't have an account? <a routerLink="/register">Sign up</a>
+          </p>
         </div>
-        <div class="social-icons">
-          <button aria-label="Log in with Google" class="icon google">
-            <!-- SVG for Google -->
-          </button>
-          <button aria-label="Log in with Twitter" class="icon twitter">
-            <!-- SVG for Twitter -->
-          </button>
-          <button aria-label="Log in with GitHub" class="icon github">
-            <!-- SVG for GitHub -->
-          </button>
-        </div>
-        <p class="signup">Don't have an account?
-          <a rel="noopener noreferrer" routerLink="/register" class="">Sign up</a>
-        </p>
       </div>
     </div>
   </div>

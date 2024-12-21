@@ -6,7 +6,10 @@ import jsPDF from 'jspdf';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    // Define animations here
+  ]
 })
 export class HomeComponent implements OnInit {
   menuItems = [
@@ -24,14 +27,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  // Method to handle opening of the modal for selecting an item
   openModal(item: any): void {
     this.selectedItem = item;
-    this.quantity = 1;  // Reset quantity to 1 every time a modal is opened
+    this.quantity = 1;
     this.updateTotal();
   }
 
-  // Method to open the payment modal
   openPaymentModal(): void {
     const modalRef = this.modalService.open(PaymentComponent, { centered: true });
     modalRef.result.then((result) => {
@@ -41,17 +42,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // Method to update the total price based on selected item and quantity
   updateTotal(): void {
     this.total = this.selectedItem ? this.selectedItem.price * this.quantity : 0;
   }
 
-  // Method to close the modal and reset the selection
   closeModal(): void {
     this.selectedItem = null;
   }
 
-  // Method to generate and download a PDF with the order details
   printPDF(): void {
     if (!this.selectedItem) {
       console.error('No item selected');

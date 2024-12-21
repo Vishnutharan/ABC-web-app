@@ -1,23 +1,54 @@
 <div class="sidebar">
-    <div class="logo">Shomus Food</div>
-    <div class="menu-item">
-      <a routerLink="/product-management" routerLinkActive="active">Product Management</a>
-    </div>
-    <div class="menu-item">
-      <a routerLink="/customer-management" routerLinkActive="active">Customer Management</a>
-    </div>
-    <div class="menu-item">
-      <a routerLink="/payment-management" routerLinkActive="active">Payment Management</a>
-    </div>
-    <div class="menu-item">
-      <a routerLink="/order-management" routerLinkActive="active">Order Management</a>
-    </div>
-    <div class="menu-item">
-      <a routerLink="/staff-management" routerLinkActive="active">Staff Management</a>
-    </div>
+  <div class="logo">ABC Food</div>
+  <div class="menu-item">
+    <a routerLink="/product-management" routerLinkActive="active">Product Management</a>
   </div>
-  
-  <div class="main-content">
-    <router-outlet></router-outlet>
+  <div class="menu-item">
+    <a routerLink="/customer-management" routerLinkActive="active">Customer Management</a>
   </div>
-  
+  <div class="menu-item">
+    <a routerLink="/payment-management" routerLinkActive="active">Payment Management</a>
+  </div>
+  <div class="menu-item">
+    <a routerLink="/order-management" routerLinkActive="active">Order Management</a>
+  </div>
+  <div class="menu-item">
+    <a routerLink="/staff-management" routerLinkActive="active">Staff Management</a>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="header">
+    <h2>Dashboard</h2>
+    <button (click)="toggleSidenav()">Toggle Sidenav</button>
+  </div>
+
+  <div class="search-filter">
+    <!-- Search and filter controls here -->
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer Name</th>
+        <th>Order Date</th>
+        <th>Order Amount</th>
+        <th>Payment Status</th>
+        <th>Invoice</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{order.orderId}}</td>
+        <td>{{order.customerName}}</td>
+        <td>{{order.orderDate}}</td>
+        <td>{{order.orderAmount}}</td>
+        <td>{{order.paymentStatus}}</td>
+        <td>{{order.invoice}}</td>
+        <td>{{order.actions}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,22 +1,22 @@
-<section class="vh-100" style="background-color: #eee;">
+<section class="vh-100">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
+        <div class="card text-black">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 animate__animated animate__fadeInDown">Sign up</p>
 
-                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mx-1 mx-md-4">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mx-1 mx-md-4 animate__animated animate__fadeInUp">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <input type="text" id="username" formControlName="username" class="form-control" />
                       <label class="form-label" for="username">Your Name</label>
-                      <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
+                      <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger animate__animated animate__shakeX">
                         Username is required.
                       </div>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="email" id="email" formControlName="email" class="form-control" />
                       <label class="form-label" for="email">Your Email</label>
-                      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+                      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger animate__animated animate__shakeX">
                         Valid email is required.
                       </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="password" id="password" formControlName="password" class="form-control" />
                       <label class="form-label" for="password">Password</label>
-                      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger">
+                      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger animate__animated animate__shakeX">
                         Password is required.
                       </div>
                     </div>
@@ -55,7 +55,7 @@
                     <button type="submit" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid">Register</button>
                   </div>
 
-                  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+                  <div *ngIf="errorMessage" class="alert alert-danger text-center animate__animated animate__fadeIn">
                     {{ errorMessage }}
                   </div>
 
@@ -63,9 +63,7 @@
 
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="/assets/reg.png" class="img-fluid" alt="Sample image">
-
+                <img src="/assets/reg.png" class="img-fluid animate__animated animate__zoomIn" alt="Sample image">
               </div>
             </div>
           </div>
