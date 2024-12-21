@@ -1,48 +1,54 @@
-/* Custom CSS for Angular Header */
-.navbar {
-  background-color: #4B0082;
-  padding: 20px;
+.navbar-dark.bg-indigo {
+  background-color: #093c6e !important; /* Darker gray - change as desired*/
 }
 
 .navbar-brand img {
-  height: 40px;
+  max-width: 100px;
 }
 
-.navbar-nav .nav-link {
-  color: #f0e68c;
-  margin-left: 20px;
-  font-size: 16px;
-  text-transform: uppercase;
+.nav-link {
+  color: #e0e0e0 !important;  /* Light gray text color */
+  transition: color 0.3s;
+  font-weight: 500;
 }
 
-.navbar-toggler {
-  border-color: #f0e68c;
+.nav-link:hover {
+  color: #f8f9fa !important; /* White on hover */
 }
 
-.navbar-toggler-icon {
-  color: #f0e68c;
+.nav-link i {
+  margin-right: 0.5rem;
 }
 
-.dropdown-menu {
-  background-color: #0f6666;
-  border: none;
-}
 
-.dropdown-item {
-  color: #f0e68c; /* Ensures visibility against the dark background */
-}
+/* Icon styling (Font Awesome examples - replace with your icon codes) */
+.nav-link[routerlink="home"] i::before { content: "\f015"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
+.nav-link[routerlink="/about"] i::before { content: "\f05a"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
+.nav-link[routerlink="login"] i::before { content: "\f2f6"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
+.nav-link[routerlink="register"] i::before { content: "\f044"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
+.nav-link[routerlink="adLogin"] i::before { content: "\f0e8"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
 
-.dropdown-item:hover {
-  background-color: #2f4f4f;
-  color: #f0e68c;
-}
 
-@media (max-width: 768px) {
+/* Responsiveness */
+@media (max-width: 992px) {
   .navbar-nav {
       text-align: center;
   }
-
-  .navbar-toggler {
-      background-color: #0f6666;
+  .nav-item {
+      margin: 0.5rem 0;
   }
+}
+
+/* Active Link */
+.nav-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #007bff; /* Blue underline - change color as needed */
+  padding-bottom: 0.2rem;
+}
+
+
+/* Optional: Navbar Enhancements */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
 }
