@@ -1,108 +1,266 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif; /* Set a nice default font */
-  margin: 0; /* Remove default margin for better layout */
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Wrapper */
 .wrapper {
-  display: flex; /* Make the wrapper a flex container */
-  min-height: 100vh; /* Set minimum height for full viewport */
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fa;
 }
 
-/* Sidebar */
+/* Sidebar Styles */
 #sidebar {
-  width: 250px; /* Adjust sidebar width as needed */
-  background-color:#113644; /* Keep your existing color */
-  padding: 20px; /* Add some padding for aesthetics */
-
-}
-.sidebar-header h3 {
+  width: 200px;
+  background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
   color: white;
+  position: fixed;
+  height: 100vh;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
-.customer-management h2 {
-  color: rgb(141, 29, 29);
-}
+
 .sidebar-header {
-  text-align: center; /* Center sidebar header text */
-  margin-bottom: 20px; /* Add some space after the header */
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
 }
 
 .sidebar-header h3 {
-  font-size: 1.2em; /* Adjust header font size */
-  margin: 0; /* Remove default margin for cleaner look */
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.list-unstyled {
-  list-style: none; /* Remove default list styling */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-}
-
-.list-unstyled li {
-  margin-bottom: 10px; /* Add spacing between list items */
-}
-
-.list-unstyled a {
-  text-decoration: none; /* Remove underline from links */
-  color: #333; /* Set a dark color for link text */
-  display: block; /* Make links take full width of the list item */
-  padding: 5px 10px; /* Add some padding for link styling */
-}
-
-.list-unstyled a:hover {
-  background-color: #eee; /* Add hover effect for links */
-}
-
-/* Content Area */
+/* Content Styles */
 #content {
-  flex: 1; /* Make content area expand to fill remaining space */
-  padding: 20px; /* Add some padding for visual separation */
+  margin-left: 200px;
+  flex: 1;
+  padding: 25px;
 }
 
 .customer-management {
-  background-color: #f5f5f5; /* Add a subtle background color for the content area */
-  padding: 20px; /* Add some padding within the content area */
-  border-radius: 5px; /* Add rounded corners for a softer look */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-h2 {
-  margin-bottom: 15px; /* Add spacing after headings */
-  color: white
+.customer-management h2 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+}
+
+/* User Form Styles */
+.user-form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
 }
 
 .form-group {
-  margin-bottom: 10px; /* Add spacing between form elements */
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .form-group label {
-  display: block; /* Make labels on their own line */
-  margin-bottom: 5px; /* Add spacing between label and input */
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.form-group input::placeholder {
+  color: #95a5a6;
 }
 
 .btn {
-  background-color: #4CAF50; /* Set a nice green color for buttons */
-  color: white; /* Set white text for buttons */
-  padding: 10px 15px; /* Add padding for button size */
-  border: none; /* Remove default button border */
-  border-radius: 5px; /* Add rounded corners */
-  margin-right: 10px; /* Add spacing between buttons */
-  cursor: pointer; /* Indicate clickable button */
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #3498db;
+  color: white;
 }
 
 .btn:hover {
-  background-color: #3e8e41; /* Change button color on hover */
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.2);
 }
 
-.user-details,
+/* User Details Styles */
+.user-details {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.user-details h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.user-details p {
+  color: #34495e;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.user-details p:before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #3498db;
+  position: absolute;
+  left: 0;
+  font-size: 14px;
+}
+
+/* All Users Styles */
 .all-users {
-  margin-top: 20px; /* Add spacing after user details and all users sections */
-  border: 1px solid #ddd; /* Add a thin border for separation */
-  padding: 10px; /* Add padding within these sections */
-  border-radius: 5px; /* Add rounded corners */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.user-details p,
-.all-users ul li {
-  margin-bottom: 5px; /* Add spacing between user data and list items */
+.all-users h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.all-users ul {
+  list-style: none;
+}
+
+.all-users li {
+  padding: 12px 15px;
+  color: #34495e;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.all-users li:hover {
+  background: #f8f9fa;
+  padding-left: 20px;
+}
+
+.all-users li:last-child {
+  border-bottom: none;
+}
+
+.all-users li:before {
+  content: "\f007";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #3498db;
+  margin-right: 10px;
+}
+
+/* Keyframes */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#sidebar {
+  animation: slideIn 0.5s ease-out;
+}
+
+#content {
+  animation: fadeIn 0.7s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 180px;
+  }
+  
+  #content {
+    margin-left: 180px;
+    padding: 20px;
+  }
+  
+  .customer-management h2 {
+    font-size: 24px;
+  }
+  
+  .user-form {
+    padding: 20px;
+  }
+  
+  .btn {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  
+  #sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-bottom: 20px;
+  }
+  
+  #content {
+    margin-left: 0;
+    padding: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .user-details, .all-users {
+    padding: 15px;
+  }
 }

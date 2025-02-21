@@ -1,24 +1,95 @@
-<div class="container-fluid login-container">
-    <div class="row justify-content-center align-items-center min-vh-100">
-      <div class="col-md-4">
-        <div class="card login-card">
-          <div class="card-body">
-            <h2 class="card-title text-center mb-4">Admin Login</h2>
-            <form (ngSubmit)="onSubmit()">
-              <div class="form-group mb-3">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" required>
-              </div>
-              <div class="form-group mb-3">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">
-                Login <i class="fas fa-sign-in-alt ml-2"></i>
-              </button>
-            </form>
+<div class="login-container">
+  <!-- Left Side - Login Form -->
+  <div class="login-side">
+    <div class="login-form-container">
+      <div class="login-header">
+        <h2>Welcome Back!</h2>
+        <p>Please login to your account</p>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" class="login-form" #loginForm="ngForm">
+        <div class="form-group">
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input 
+              type="text" 
+              id="username" 
+              name="username" 
+              [(ngModel)]="username" 
+              required
+              placeholder="Username"
+              #usernameInput="ngModel"
+            >
+          </div>
+          <div class="error-message" *ngIf="loginForm.submitted && usernameInput.invalid">
+            Username is required
           </div>
         </div>
+
+        <div class="form-group">
+          <div class="input-wrapper">
+            <i class="fas fa-lock"></i>
+            <input 
+              [type]="showPassword ? 'text' : 'password'" 
+              id="password" 
+              name="password" 
+              [(ngModel)]="password" 
+              required
+              placeholder="Password"
+              #passwordInput="ngModel"
+            >
+            <button 
+              type="button" 
+              class="toggle-password"
+              (click)="togglePasswordVisibility()"
+            >
+              <i [class]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </button>
+          </div>
+          <div class="error-message" *ngIf="loginForm.submitted && passwordInput.invalid">
+            Password is required
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+            <span class="checkmark"></span>
+            Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-button" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Login</span>
+          <div class="loader" *ngIf="isLoading"></div>
+        </button>
+
+        <div class="login-error" *ngIf="errorMessage">
+          <i class="fas fa-exclamation-circle"></i>
+          {{ errorMessage }}
+        </div>
+
+        <div class="system-info">
+          <i class="far fa-clock"></i>
+          <span>{{ currentDateTime | date:'medium' }}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Right Side - Brand Section -->
+  <div class="brand-side">
+    <div class="brand-content">
+      <div class="logo-wrapper">
+        <img src="assets/logo.png" alt="ABC Food Logo" class="brand-logo">
+        <h1 class="brand-name">ABC Food</h1>
+      </div>
+      <p class="brand-tagline">Restaurant Management System</p>
+      <div class="brand-decoration">
+        <div class="floating-circle"></div>
+        <div class="floating-square"></div>
       </div>
     </div>
   </div>
+</div>

@@ -1,54 +1,115 @@
-.navbar-dark.bg-indigo {
-  background-color: #093c6e !important; /* Darker gray - change as desired*/
+.navbar {
+  background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
 }
 
 .navbar-brand img {
-  max-width: 100px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 0.5rem;
 }
 
 .nav-link {
-  color: #e0e0e0 !important;  /* Light gray text color */
-  transition: color 0.3s;
-  font-weight: 500;
+  color: #fff !important;
+  padding: 0.8rem 1.2rem !important;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #f8f9fa !important; /* White on hover */
+.nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3498db;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover:before {
+  transform: translateX(0);
 }
 
 .nav-link i {
   margin-right: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
+.nav-link:hover i {
+  transform: translateY(-2px);
+}
 
-/* Icon styling (Font Awesome examples - replace with your icon codes) */
-.nav-link[routerlink="home"] i::before { content: "\f015"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
-.nav-link[routerlink="/about"] i::before { content: "\f05a"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
-.nav-link[routerlink="login"] i::before { content: "\f2f6"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
-.nav-link[routerlink="register"] i::before { content: "\f044"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
-.nav-link[routerlink="adLogin"] i::before { content: "\f0e8"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
+.router-link-active {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
 
-
-/* Responsiveness */
-@media (max-width: 992px) {
-  .navbar-nav {
-      text-align: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-nav {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.nav-item {
+  animation: slideIn 0.5s ease forwards;
+  animation-delay: calc(var(--item-number) * 0.1s);
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+  }
+  
   .nav-item {
-      margin: 0.5rem 0;
+    margin: 0.5rem 0;
   }
-}
-
-/* Active Link */
-.nav-link.active {
-  font-weight: bold;
-  border-bottom: 2px solid #007bff; /* Blue underline - change color as needed */
-  padding-bottom: 0.2rem;
-}
-
-
-/* Optional: Navbar Enhancements */
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 5px 5px;
 }
